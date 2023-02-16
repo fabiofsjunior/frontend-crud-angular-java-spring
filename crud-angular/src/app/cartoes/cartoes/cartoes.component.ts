@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Cartoes } from '../model/cartoes';
 
 @Component({
   selector: 'app-cartoes',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./cartoes.component.scss']
 })
 export class CartoesComponent {
+  
+  cartoes: Cartoes[] = [];
 
 }
