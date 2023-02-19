@@ -1,6 +1,12 @@
-
+*{
+  margin: 0;
+  padding: 0;
+}
 .example-spacer {
   flex: 1 1 auto;
+}
+#title{
+  justify-content: space-around;
 }
 
 section {

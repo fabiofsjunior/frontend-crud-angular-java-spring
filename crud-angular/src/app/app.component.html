@@ -1,9 +1,11 @@
-<p>
-  <mat-toolbar color="primary">
-    <span>CRUD - ANGULAR, JAVA, SPRING</span>
-  </mat-toolbar>
-</p>
+<mat-toolbar color="primary" id="title">
+  <span>CRUD - ANGULAR, JAVA, SPRING</span>
+</mat-toolbar>
+
 <section>
+  <div class="example-button-row">
+    <button routerLink="" mat-button color="primary">Home</button>
+  </div>
   <div class="example-button-row">
     <button routerLink="autenticacao" mat-button color="primary">Login</button>
   </div>
@@ -11,7 +13,12 @@
     <button routerLink="cartoes" mat-button color="primary">Cartões</button>
   </div>
   <div class="example-button-row">
-    <button routerLink="solicitacoes" mat-button color="primary">Solicitações</button>
+    <button routerLink="solicitacoes" mat-button color="primary">
+      Solicitações
+    </button>
+  </div>
+  <div class="example-button-row">
+    <button routerLink="" mat-button color="primary">Sair</button>
   </div>
 </section>
 
