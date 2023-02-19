@@ -6,6 +6,7 @@ import { CartoesComponent } from './cartoes/cartoes.component';
 import { SolicitacoesComponent } from './solicitacoes/solicitacoes.component';
 import { AutenticacaoComponent } from './autenticacao/autenticacao.component';
 import {MatCardModule} from '@angular/material/card';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -13,7 +14,8 @@ import {MatCardModule} from '@angular/material/card';
   declarations: [
     CartoesComponent,
     SolicitacoesComponent,
-    AutenticacaoComponent
+    AutenticacaoComponent,
+    HomeComponent
   ],
   imports: [
     CommonModule,

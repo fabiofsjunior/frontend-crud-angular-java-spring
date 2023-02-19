@@ -1,3 +1,4 @@
+import { HomeComponent } from './componentes/home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -6,7 +7,7 @@ import { CartoesComponent } from './componentes/cartoes/cartoes.component';
 import { SolicitacoesComponent } from './componentes/solicitacoes/solicitacoes.component';
 
 const routes: Routes = [
-  // {path: "", pathMatch: "full", component: AutenticacaoComponent},
+  {path: "", pathMatch: "full", component: HomeComponent},
   { path: 'cartoes', pathMatch: 'full', component: CartoesComponent },
   { path: 'autenticacao', pathMatch: 'full', component: AutenticacaoComponent },
   { path: 'solicitacoes', pathMatch: 'full', component: SolicitacoesComponent },
