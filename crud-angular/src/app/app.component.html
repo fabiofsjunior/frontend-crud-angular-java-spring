@@ -1,26 +1,17 @@
-<mat-toolbar color="primary" id="title">
+<mat-toolbar color="secondary" class="title">
   <span>CRUD - ANGULAR, JAVA, SPRING</span>
-</mat-toolbar>
-
-<section>
-  <div class="example-button-row">
+  <span class="example-button-row">
     <button routerLink="" mat-button color="primary">Home</button>
-  </div>
-  <div class="example-button-row">
     <button routerLink="autenticacao" mat-button color="primary">Login</button>
-  </div>
-  <div class="example-button-row">
     <button routerLink="cartoes" mat-button color="primary">Cartões</button>
-  </div>
-  <div class="example-button-row">
     <button routerLink="solicitacoes" mat-button color="primary">
       Solicitações
     </button>
-  </div>
-  <div class="example-button-row">
-    <button routerLink="" mat-button color="primary">Sair</button>
-  </div>
-</section>
+    <button class="hidden" routerLink="" mat-button color="primary">
+      Sair
+    </button>
+  </span>
+</mat-toolbar>
 
 <mat-card>
   <mat-card-content class="example-card">
@@ -28,3 +19,25 @@
     <router-outlet></router-outlet>
   </mat-card-content>
 </mat-card>
+
+<!-- FOOOTER -->
+
+<footer class="footer-distributed">
+  <div class="footer-left">
+    <p class="footer-links">
+      <a class="link-1" href="#">Home</a>
+
+      <a href="#">Blog</a>
+
+      <a href="#">Pricing</a>
+
+      <a href="#">About</a>
+
+      <a href="#">Faq</a>
+
+      <a href="#">Contact</a>
+    </p>
+
+    <p>Fábio F S Jr/ Urbana-PE &copy; 2023</p>
+  </div>
+</footer>
