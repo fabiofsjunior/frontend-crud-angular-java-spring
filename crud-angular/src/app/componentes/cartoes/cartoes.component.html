@@ -1,1 +1,66 @@
-<p>cartoes works!</p>
+<h1>Meus Cartões</h1>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad id repudiandae fugiat in hic odit totam. Nihil quae odit, numquam non eos, esse maiores, veritatis corrupti dicta hic vitae expedita?</p>
+
+<section>
+  <div class="example-button-row">
+    <button routerLink="solicitacoes" mat-raised-button >Solicitar Cartão</button>
+  </div>
+</section>
+
+<table mat-table [dataSource]="dadosCartao"class="mat-elevation-z8">
+
+<!-- Checkbox Column -->
+<ng-container matColumnDef="select">
+  <th mat-header-cell *matHeaderCellDef>
+    <mat-checkbox (change)="$event ? toggleAllRows() : null"
+                  [checked]="selection.hasValue() && isAllSelected()"
+                  [indeterminate]="selection.hasValue() && !isAllSelected()"
+                  [aria-label]="checkboxLabel()">
+    </mat-checkbox>
+  </th>
+  <td mat-cell *matCellDef="let row">
+    <mat-checkbox (click)="$event.stopPropagation()"
+                  (change)="$event ? selection.toggle(row) : null"
+                  [checked]="selection.isSelected(row)"
+                  [aria-label]="checkboxLabel(row)">
+    </mat-checkbox>
+  </td>
+</ng-container>
+
+  <!-- Nº Column -->
+  <ng-container matColumnDef="numeroCartao">
+    <th mat-header-cell *matHeaderCellDef> Nº </th>
+    <td mat-cell *matCellDef="let element"> {{element.numeroCartao}} </td>
+  </ng-container>
+
+  <!-- Nome Column -->
+  <ng-container matColumnDef="nomeCartao">
+    <th mat-header-cell *matHeaderCellDef> Nome do Cartão </th>
+    <td mat-cell *matCellDef="let element"> {{element.nomeCartao}} </td>
+  </ng-container>
+
+  <!-- Status Cartão Column -->
+  <ng-container matColumnDef="statusCartao">
+    <th mat-header-cell *matHeaderCellDef> Status Cartão </th>
+    <td mat-cell *matCellDef="let element"> {{element.statusCartao}} </td>
+  </ng-container>
+
+  <!-- Tipo Cartão Column -->
+  <ng-container matColumnDef="tipoCartao">
+    <th mat-header-cell *matHeaderCellDef> Tipo Cartão </th>
+    <td mat-cell *matCellDef="let element"> {{element.tipoCartao}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<section>
+  <div class="example-button-row">
+    <button mat-raised-button color="primary">Editar</button>
+    <button mat-raised-button color="warn">Excluir</button>
+  </div>
+</section>
+
+
+
