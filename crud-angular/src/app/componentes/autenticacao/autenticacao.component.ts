@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { AppComponent } from './../../app.component';
+import { Component, EventEmitter } from '@angular/core';
+
 
 @Component({
   selector: 'app-autenticacao',

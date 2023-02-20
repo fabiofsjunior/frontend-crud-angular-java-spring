@@ -1,15 +1,13 @@
 <mat-toolbar color="secondary" class="title">
   <span>CRUD - ANGULAR, JAVA, SPRING</span>
   <span class="example-button-row">
-    <button routerLink="" mat-button color="primary">Home</button>
     <button routerLink="autenticacao" mat-button color="primary">Login</button>
-    <button routerLink="cartoes" mat-button color="primary">Cartões</button>
-    <button routerLink="solicitacoes" mat-button color="primary">
+    <button routerLink="" mat-button color="primary">Home</button>
+    <button *ngIf="hidden" routerLink="cartoes" mat-button color="primary">Cartões</button>
+    <button *ngIf="hidden" routerLink="solicitacoes" mat-button color="primary">
       Solicitações
     </button>
-    <button class="hidden" routerLink="" mat-button color="primary">
-      Sair
-    </button>
+    <button *ngIf="hidden" routerLink="" mat-button color="primary">Sair</button>
   </span>
 </mat-toolbar>
 
@@ -41,3 +39,4 @@
     <p>Fábio F S Jr/ Urbana-PE &copy; 2023</p>
   </div>
 </footer>
+
