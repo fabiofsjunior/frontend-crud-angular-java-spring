@@ -25,6 +25,13 @@ const routes: Routes = [
         (m) => m.ComponentesModule
       ),
   },
+  {
+    path: 'solicitacoes',
+    loadChildren: () =>
+      import('./componentes/componentes.module').then(
+        (m) => m.ComponentesModule
+      ),
+  },
 ];
 
 @NgModule({
