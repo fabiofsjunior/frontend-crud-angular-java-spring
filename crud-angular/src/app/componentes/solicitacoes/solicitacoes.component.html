@@ -1,1 +1,26 @@
-<p>solicitacoes works!</p>
+<div>
+  <h1>Solicitações</h1>
+  <p>Escolha um tipo de cartão em seguida no botão ao lado em "Solicitar Cartão".</p>
+</div>
+
+<mat-card>
+  <mat-card-content>
+      <mat-form-field class="example-container" appearance="fill">
+        <mat-label>Escolher cartão</mat-label>
+        <mat-select>
+          <mat-option value="comum">Comum</mat-option>
+          <mat-option value="estudante">Estudante</mat-option>
+          <mat-option value="trabalhador">Trabalhador</mat-option>
+        </mat-select>
+        <mat-hint align="end">Selecione uma opção</mat-hint>
+      </mat-form-field>
+
+    <section class="example-container">
+      <div class="example-button-row">
+        <button routerLink="solicitacoes" mat-raised-button>Solicitar Cartão</button>
+      </div>
+    </section>
+  </mat-card-content>
+</mat-card>
+
+
