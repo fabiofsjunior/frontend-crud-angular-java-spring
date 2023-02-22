@@ -17,7 +17,7 @@ export class CartoesService {
   constructor(private httpClient: HttpClient) {}
 
   list() {
-    return this.httpClient.get<Cartoes[]>(this.API).pipe(
+    return this.httpClient.get<Cartoes[]>(this.arquivoJson).pipe(
       first(),
       delay(5000),
       tap(cartoes => console.log(cartoes))

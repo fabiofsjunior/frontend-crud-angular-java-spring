@@ -29,7 +29,7 @@
     <!-- Status Cartão Column -->
     <ng-container matColumnDef="statusCartao">
       <th mat-header-cell *matHeaderCellDef>Status Cartão</th>
-      <td mat-cell *matCellDef="let element">{{ element.statusCartao }}</td>
+      <td mat-cell *matCellDef="let element">{{ element.statusCartao | status_cartao }}</td>
     </ng-container>
 
     <!-- Tipo Cartão Column -->
