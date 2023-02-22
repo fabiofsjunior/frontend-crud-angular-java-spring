@@ -17,7 +17,11 @@ import { CartoesService } from './../services/cartoes.service';
 export class CartoesComponent {
   cartoes$: Observable<Cartoes[]>;
 
+  cards: Cartoes[]=[];
+
+
   displayedColumns: string[] = [
+    '_id',
     'numeroCartao',
     'nomeCartao',
     'statusCartao',
@@ -42,4 +46,9 @@ export class CartoesComponent {
       data: errorMsg,
     });
   }
+  getCards(): void{
+    this.cartoesService.getAll().subscribe((cards) => (this.cards = cards));
+  }
+
+
 }

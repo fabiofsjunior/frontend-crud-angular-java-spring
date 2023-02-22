@@ -1,10 +1,11 @@
 import { Observable } from 'rxjs/internal/Observable';
-import { Cartoes } from './../model/cartoes';
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { tap } from 'rxjs/internal/operators/tap';
-import { first } from 'rxjs/internal/operators/first';
+import { Injectable } from '@angular/core';
 import { delay } from 'rxjs/internal/operators/delay';
+import { first } from 'rxjs/internal/operators/first';
+import { tap } from 'rxjs/internal/operators/tap';
+
+import { Cartoes } from './../model/cartoes';
 
 @Injectable({
   providedIn: 'root',
@@ -12,15 +13,23 @@ import { delay } from 'rxjs/internal/operators/delay';
 export class CartoesService {
   //path da API
   private readonly arquivoJson = '/assets/cartoes.json';
-  private readonly API = 'http://localhost:8080/cartao';
+  private readonly API = 'http://localhost:8080/api/cartao';
 
   constructor(private httpClient: HttpClient) {}
 
+  getAll(): Observable<Cartoes[]>{
+    return this.httpClient.get<Cartoes[]>(this.API)
+  }
+  
+
   list() {
-    return this.httpClient.get<Cartoes[]>(this.arquivoJson).pipe(
+    return this.httpClient.get<Cartoes[]>(this.API).pipe(
       first(),
       delay(5000),
       tap(cartoes => console.log(cartoes))
     );
   }
+
+
+
 }

@@ -13,7 +13,13 @@
 </section>
 
 <div *ngIf="cartoes$ | async as cartoes; else loading">
-  <table mat-table [dataSource]="cartoes" class="mat-elevation-z8">
+  <table mat-table [dataSource]="cards" class="mat-elevation-z8">
+    <!-- Nº Column -->
+    <ng-container matColumnDef="_id">
+      <th mat-header-cell *matHeaderCellDef>Nº</th>
+      <td mat-cell *matCellDef="let element">{{ element._id }}</td>
+    </ng-container>
+
     <!-- Nº Column -->
     <ng-container matColumnDef="numeroCartao">
       <th mat-header-cell *matHeaderCellDef>Nº</th>
