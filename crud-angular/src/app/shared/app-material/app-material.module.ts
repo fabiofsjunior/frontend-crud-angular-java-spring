@@ -5,6 +5,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -23,6 +24,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatFormFieldModule,
     MatSelectModule,
     MatDialogModule,
+    MatProgressSpinnerModule,
+
   ],
 })
 export class AppMaterialModule {}
