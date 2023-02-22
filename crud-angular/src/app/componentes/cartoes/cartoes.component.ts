@@ -4,6 +4,8 @@ import { SelectionModel } from '@angular/cdk/collections';
 
 import { Cartoes } from '../model/cartoes';
 import { Observable } from 'rxjs/internal/Observable';
+import { catchError } from 'rxjs/internal/operators/catchError';
+import { of } from 'rxjs/internal/observable/of';
 
 @Component({
   selector: 'app-cartoes',
@@ -21,7 +23,15 @@ export class CartoesComponent {
   ];
 
   constructor(private cartoesService: CartoesService) {
-    this.cartoes$ = this.cartoesService.list();
+    this.cartoes$ = this.cartoesService.list()
+    .pipe(
+      catchError(error => {
+        console.log(error)
+        
+        return of ([])
+      })
+
+    );
   }
 
 
