@@ -1,9 +1,7 @@
-import { SolicitacoesComponent } from './solicitacoes/solicitacoes.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { AutenticacaoComponent } from './autenticacao/autenticacao.component';
-import { CartoesComponent } from './cartoes/cartoes.component';
+import { SolicitacoesComponent } from './solicitacoes/solicitacoes.component';
 
 const routes: Routes = [
   // {path:"", component: AutenticacaoComponent},
