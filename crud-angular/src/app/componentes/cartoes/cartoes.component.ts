@@ -1,11 +1,10 @@
 import { CartoesService } from './../services/cartoes.service';
 import { Component } from '@angular/core';
-import {SelectionModel} from '@angular/cdk/collections';
-import {MatTableDataSource} from '@angular/material/table';
-
-
+import { SelectionModel } from '@angular/cdk/collections';
+import { MatTableDataSource } from '@angular/material/table';
 
 import { Cartoes } from '../model/cartoes';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Component({
   selector: 'app-cartoes',
@@ -13,47 +12,44 @@ import { Cartoes } from '../model/cartoes';
   styleUrls: ['./cartoes.component.scss'],
 })
 export class CartoesComponent {
-  dadosCartao: Cartoes[] = [];
-  cartoesService: CartoesService;
 
-  constructor(){
-    this.cartoesService= new CartoesService;
-    this.dadosCartao = this.cartoesService.list();
+  cartoes!: Observable<Cartoes[]>;
+
+  displayedColumns: string[] = ['numeroCartao','nomeCartao','statusCartao','tipoCartao'];
+
+  constructor(private cartoesService: CartoesService) {
+    this.getCartoes()
   }
 
-
-  selection = new SelectionModel<Cartoes>(true, []);
-   /** Whether the number of selected elements matches the total number of rows. */
-   isAllSelected() {
-    const numSelected = this.selection.selected.length;
-    const numRows = this.dadosCartao.length;
-    return numSelected === numRows;
-  }
-  /** Selects all rows if they are not all selected; otherwise clear selection. */
-  toggleAllRows() {
-    if (this.isAllSelected()) {
-      this.selection.clear();
-      return;
-    }
-
-    this.selection.select(...this.dadosCartao);
+  getCartoes(){
+    this.cartoesService.list().subscribe(() => {this.cartoes = this.cartoes;});
   }
 
-  /** The label for the checkbox on the passed row */
-  checkboxLabel(row?: Cartoes): string {
-    if (!row) {
-      return `${this.isAllSelected() ? 'deselect' : 'select'} all`;
-    }
-    return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.numeroCartao + 1}`;
-  }
+  // selection = new SelectionModel<Cartoes>(true, []);
+  // /** Whether the number of selected elements matches the total number of rows. */
+  // isAllSelected() {
+  //   const numSelected = this.selection.selected.length;
+
+  // }
+  // /** Selects all rows if they are not all selected; otherwise clear selection. */
+  // toggleAllRows() {
+  //   if (this.isAllSelected()) {
+  //     this.selection.clear();
+  //     return;
+  //   }
+
+  //   this.selection.select(...this.cartoes);
+  // }
+
+  // /** The label for the checkbox on the passed row */
+  // checkboxLabel(row?: Cartoes): string {
+  //   if (!row) {
+  //     return `${this.isAllSelected() ? 'deselect' : 'select'} all`;
+  //   }
+  //   return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${
+  //     row.numeroCartao + 1
+  //   }`;
+  // }
 
 
-
-  displayedColumns: string[] = [
-    'select',
-    'numeroCartao',
-    'nomeCartao',
-    'statusCartao',
-    'tipoCartao',
-  ];
 }
