@@ -1,11 +1,13 @@
-import { CartoesService } from './../services/cartoes.service';
+import { ErrorDialogComponent } from './../../shared/components/error-dialog/error-dialog.component';
 import { Component } from '@angular/core';
-import { SelectionModel } from '@angular/cdk/collections';
+import { MatDialog } from '@angular/material/dialog';
+import { Observable } from 'rxjs/internal/Observable';
+import { of } from 'rxjs/internal/observable/of';
+import { catchError } from 'rxjs/internal/operators/catchError';
+
 
 import { Cartoes } from '../model/cartoes';
-import { Observable } from 'rxjs/internal/Observable';
-import { catchError } from 'rxjs/internal/operators/catchError';
-import { of } from 'rxjs/internal/observable/of';
+import { CartoesService } from './../services/cartoes.service';
 
 @Component({
   selector: 'app-cartoes',
@@ -22,17 +24,22 @@ export class CartoesComponent {
     'tipoCartao',
   ];
 
-  constructor(private cartoesService: CartoesService) {
-    this.cartoes$ = this.cartoesService.list()
-    .pipe(
-      catchError(error => {
-        console.log(error)
-        
-        return of ([])
-      })
+  constructor(
+    private cartoesService: CartoesService,
+    public dialog: MatDialog
+  ) {
+    this.cartoes$ = this.cartoesService.list().pipe(
+      catchError((error) => {
+        this.openDialogError('Erro ao carregar cartões');
 
+        return of([]);
+      })
     );
   }
 
-
+  openDialogError(errorMsg: string) {
+    this.dialog.open(ErrorDialogComponent, {
+      data: errorMsg,
+    });
+  }
 }
