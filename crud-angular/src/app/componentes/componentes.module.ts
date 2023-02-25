@@ -8,6 +8,7 @@ import { CartoesComponent } from './cartoes/cartoes.component';
 import { ComponentesRoutingModule } from './componentes-routing.module';
 import { HomeComponent } from './home/home.component';
 import { SolicitacoesComponent } from './solicitacoes/solicitacoes.component';
+import { ComponentesFormComponent } from './componentes-form/componentes-form.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { SolicitacoesComponent } from './solicitacoes/solicitacoes.component';
     SolicitacoesComponent,
     AutenticacaoComponent,
     HomeComponent,
+    ComponentesFormComponent,
 
   ],
   imports: [CommonModule, ComponentesRoutingModule, AppMaterialModule, SharedModule,],

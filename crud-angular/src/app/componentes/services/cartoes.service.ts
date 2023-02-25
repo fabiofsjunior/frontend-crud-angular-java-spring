@@ -20,12 +20,12 @@ export class CartoesService {
   getAll(): Observable<Cartoes[]>{
     return this.httpClient.get<Cartoes[]>(this.API)
   }
-  
+
 
   list() {
-    return this.httpClient.get<Cartoes[]>(this.API).pipe(
+    return this.httpClient.get<Cartoes[]>(this.arquivoJson).pipe(
       first(),
-      delay(5000),
+      delay(2000),
       tap(cartoes => console.log(cartoes))
     );
   }

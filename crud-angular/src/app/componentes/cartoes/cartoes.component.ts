@@ -6,6 +6,7 @@ import { of } from 'rxjs/internal/observable/of';
 import { catchError } from 'rxjs/internal/operators/catchError';
 
 
+
 import { Cartoes } from '../model/cartoes';
 import { CartoesService } from './../services/cartoes.service';
 
@@ -26,6 +27,8 @@ export class CartoesComponent {
     'nomeCartao',
     'statusCartao',
     'tipoCartao',
+    'editar',
+    'excluir',
   ];
 
   constructor(
@@ -48,6 +51,12 @@ export class CartoesComponent {
   }
   getCards(): void{
     this.cartoesService.getAll().subscribe((cards) => (this.cards = cards));
+  }
+  onEditar(): void{
+    console.log("Sucesso ao chamar o método - onEditar()")
+  }
+  onExcluir(): void{
+    console.log("Sucesso ao chamar o método - onExcluir()")
   }
 
 
