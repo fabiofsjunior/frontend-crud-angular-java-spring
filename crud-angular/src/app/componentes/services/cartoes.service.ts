@@ -1,6 +1,6 @@
-import { Observable } from 'rxjs/internal/Observable';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/internal/Observable';
 import { delay } from 'rxjs/internal/operators/delay';
 import { first } from 'rxjs/internal/operators/first';
 import { tap } from 'rxjs/internal/operators/tap';
@@ -17,19 +17,15 @@ export class CartoesService {
 
   constructor(private httpClient: HttpClient) {}
 
-  getAll(): Observable<Cartoes[]>{
-    return this.httpClient.get<Cartoes[]>(this.API)
+  getAll(): Observable<Cartoes[]> {
+    return this.httpClient.get<Cartoes[]>(this.API);
   }
-
 
   list() {
     return this.httpClient.get<Cartoes[]>(this.arquivoJson).pipe(
       first(),
       delay(2000),
-      tap(cartoes => console.log(cartoes))
+      tap((cartoes) => console.log(cartoes))
     );
   }
-
-
-
 }

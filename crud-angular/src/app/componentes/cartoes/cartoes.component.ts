@@ -1,13 +1,11 @@
-import { ErrorDialogComponent } from './../../shared/components/error-dialog/error-dialog.component';
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs/internal/Observable';
 import { of } from 'rxjs/internal/observable/of';
 import { catchError } from 'rxjs/internal/operators/catchError';
 
-
-
 import { Cartoes } from '../model/cartoes';
+import { ErrorDialogComponent } from './../../shared/components/error-dialog/error-dialog.component';
 import { CartoesService } from './../services/cartoes.service';
 
 @Component({
@@ -18,8 +16,7 @@ import { CartoesService } from './../services/cartoes.service';
 export class CartoesComponent {
   cartoes$: Observable<Cartoes[]>;
 
-  cards: Cartoes[]=[];
-
+  cards: Cartoes[] = [];
 
   displayedColumns: string[] = [
     '_id',
@@ -49,20 +46,17 @@ export class CartoesComponent {
       data: errorMsg,
     });
   }
-  getCards(): void{
+  getCards(): void {
     this.cartoesService.getAll().subscribe((cards) => (this.cards = cards));
   }
-  onEditar(): void{
-    console.log("Sucesso ao chamar o método - onEditar()")
+  onEditar(): void {
+    console.log('Sucesso ao chamar o método - onEditar()');
   }
-  onExcluir(): void{
-    console.log("Sucesso ao chamar o método - onExcluir()")
-  }
-
-  onSolicitarCartao(): void{
-    console.log("Sucesso ao chamar o método - onSolicitarCartao()")
-
+  onExcluir(): void {
+    console.log('Sucesso ao chamar o método - onExcluir()');
   }
 
-
+  onSolicitarCartao(): void {
+    console.log('Sucesso ao chamar o método - onSolicitarCartao()');
+  }
 }
