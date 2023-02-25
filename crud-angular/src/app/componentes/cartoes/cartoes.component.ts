@@ -1,3 +1,5 @@
+import { EditarDialogComponent } from './../../shared/components/editar-dialog/editar-dialog.component';
+import { ExcluirDialogComponent } from './../../shared/components/excluir-dialog/excluir-dialog.component';
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs/internal/Observable';
@@ -51,9 +53,19 @@ export class CartoesComponent {
   }
   onEditar(): void {
     console.log('Sucesso ao chamar o método - onEditar()');
+    const dialogRef = this.dialog.open(EditarDialogComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
   onExcluir(): void {
     console.log('Sucesso ao chamar o método - onExcluir()');
+    const dialogRef = this.dialog.open(ExcluirDialogComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 
   onSolicitarCartao(): void {

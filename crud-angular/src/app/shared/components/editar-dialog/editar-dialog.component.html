@@ -1,0 +1,42 @@
+<h2 mat-dialog-title>Editar dados do cartão</h2>
+<mat-dialog-content class="mat-typography">
+  <h3>Aqui você consegue alterar os dados do seu cartão.</h3>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+  <mat-form-field class="example-container">
+    <div>
+      <mat-label>Input</mat-label>
+      <input/>
+    </div>
+
+    <div>
+      <mat-label>Select</mat-label>
+      <mat-select>
+        <mat-option value="one">Ativar</mat-option>
+        <mat-option value="two">Desativar</mat-option>
+      </mat-select>
+    </div>
+
+    <div>
+      <mat-label>Escolher cartão</mat-label>
+      <mat-select>
+        <mat-option value="comum">Comum</mat-option>
+        <mat-option value="estudante">Estudante</mat-option>
+        <mat-option value="trabalhador">Trabalhador</mat-option>
+      </mat-select>
+      <mat-hint align="end">Selecione uma opção</mat-hint>
+    </div>
+  </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button color="warn" mat-raised-button mat-dialog-close>Cancelar</button>
+  <button
+    color="primary"
+    mat-raised-button
+    [mat-dialog-close]="true"
+    cdkFocusInitial
+  >
+    Confirmar
+  </button>
+</mat-dialog-actions>
