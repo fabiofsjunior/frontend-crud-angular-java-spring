@@ -59,5 +59,10 @@ export class CartoesComponent {
     console.log("Sucesso ao chamar o método - onExcluir()")
   }
 
+  onSolicitarCartao(): void{
+    console.log("Sucesso ao chamar o método - onSolicitarCartao()")
+
+  }
+
 
 }
