@@ -1,5 +1,4 @@
-import { AppComponent } from './../../app.component';
-import { Component, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
 
 
 @Component({
