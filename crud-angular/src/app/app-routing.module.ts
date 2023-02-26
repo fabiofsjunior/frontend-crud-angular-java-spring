@@ -1,3 +1,4 @@
+import { CadastrarUsuarioComponent } from './componentes/cadastrar-usuario/cadastrar-usuario.component';
 import { HomeComponent } from './componentes/home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'cartoes', pathMatch: 'full', component: CartoesComponent },
   { path: 'autenticacao', pathMatch: 'full', component: AutenticacaoComponent },
   { path: 'solicitacoes', pathMatch: 'full', component: SolicitacoesComponent },
+  { path: 'cadastrar/usuario', pathMatch: 'full', component: CadastrarUsuarioComponent },
   {
     path: 'autenticacao',
     loadChildren: () =>

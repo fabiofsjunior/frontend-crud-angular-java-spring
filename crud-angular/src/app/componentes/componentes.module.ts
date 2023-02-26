@@ -9,6 +9,7 @@ import { ComponentesRoutingModule } from './componentes-routing.module';
 import { HomeComponent } from './home/home.component';
 import { SolicitacoesComponent } from './solicitacoes/solicitacoes.component';
 import { ComponentesFormComponent } from './componentes-form/componentes-form.component';
+import { CadastrarUsuarioComponent } from './cadastrar-usuario/cadastrar-usuario.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { ComponentesFormComponent } from './componentes-form/componentes-form.co
     AutenticacaoComponent,
     HomeComponent,
     ComponentesFormComponent,
+    CadastrarUsuarioComponent,
 
   ],
   imports: [CommonModule, ComponentesRoutingModule, AppMaterialModule, SharedModule,],
