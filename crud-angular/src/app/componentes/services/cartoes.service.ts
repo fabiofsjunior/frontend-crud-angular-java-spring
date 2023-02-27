@@ -28,4 +28,10 @@ export class CartoesService {
       tap((cartoes) => console.log(cartoes))
     );
   }
+
+  save(record: Cartoes){
+    return this.httpClient.post<Cartoes>(this.API, record).pipe(
+      first(),
+    );
+  }
 }

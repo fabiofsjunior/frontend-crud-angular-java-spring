@@ -1,23 +1,39 @@
 <mat-card>
   <mat-card-content>
-  <div class="login-root">
-
-      <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
-        <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
+    <div class="login-root">
+      <div
+        class="box-root padding-top--24 flex-flex flex-direction--column"
+        style="flex-grow: 1; z-index: 9"
+      >
+        <div
+          class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center"
+        >
           <h1><a href="#" rel="dofollow">Cadastro</a></h1>
         </div>
         <div class="formbg-outer">
           <div class="formbg">
             <div class="formbg-inner padding-horizontal--48">
               <span class="padding-bottom--15">Cadastre-se</span>
-              <form id="stripe-login">
+              <form id="stripe-login" [formGroup]="form">
                 <div class="field padding-bottom--24">
                   <label for="text">Nome Completo</label>
-                  <input type="text" name="text">
+                  <input
+                    matInput
+                    formControlName="nome"
+                    placeholder="Nome Completo"
+                    type="text"
+                    name="text"
+                  />
                 </div>
                 <div class="field padding-bottom--24">
                   <label for="email">Email</label>
-                  <input type="email" name="email">
+                  <input
+                    matInput
+                    formControlName="email"
+                    placeholder="Email"
+                    type="email"
+                    name="email"
+                  />
                 </div>
                 <div class="field padding-bottom--24">
                   <div class="grid--50-50">
@@ -26,16 +42,30 @@
                       <a href="#">Esqueci minha senha.</a>
                     </div>
                   </div>
-                  <input type="password" name="password">
+                  <input
+                    matInput
+                    formControlName="senha"
+                    placeholder="Senha"
+                    type="password"
+                    name="password"
+                  />
                 </div>
                 <div class="field padding-bottom--24">
-                  <input id="sumbmit" routerLink="/autenticacao" type="submit" name="submit" value="Cadastrar"/>
+                  <input
+                    id="sumbmit"
+                    type="submit"
+                    name="submit"
+                    value="Cadastrar"
+                    (click)="onSubmit()"
+                  />
                 </div>
               </form>
             </div>
           </div>
           <div class="footer-link padding-top--24">
-            <div class="listing padding-top--24 padding-bottom--24 flex-flex center-center">
+            <div
+              class="listing padding-top--24 padding-bottom--24 flex-flex center-center"
+            >
               <span><a href="#">© CRUD - ANGULAR, JAVA, SPRING</a></span>
               <span><a href="#">Contato</a></span>
               <span><a href="#">Termos & Privadidade</a></span>
