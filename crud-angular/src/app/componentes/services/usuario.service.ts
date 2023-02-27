@@ -22,7 +22,7 @@ export class UsuarioService {
   }
 
   save(record: Usuarios){
-    return this.httpClient.post<Usuarios>(this.API, record)
+    return this.httpClient.post<Usuarios>(this.API, record);
   }
 
 }

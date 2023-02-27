@@ -19,9 +19,9 @@ export class CadastrarUsuarioComponent {
     private service: UsuarioService){
     this.form = this.formBuilder.group( {
 
-      nome: [null],
-      email: [null],
-      senha: [null],
+      nomeUsuario: [null],
+      emailUsuario: [null],
+      senhaUsuario: [null],
 
     });
 
@@ -29,6 +29,7 @@ export class CadastrarUsuarioComponent {
   }
 
   onSubmit(): void{
+    console.log(this.service.save(this.form.value))
     this.service.save(this.form.value)
     .subscribe(result => this.onSucess(), error => this.onError())
 
