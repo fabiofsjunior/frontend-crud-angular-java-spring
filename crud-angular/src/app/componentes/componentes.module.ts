@@ -10,6 +10,8 @@ import { HomeComponent } from './home/home.component';
 import { SolicitacoesComponent } from './solicitacoes/solicitacoes.component';
 import { ComponentesFormComponent } from './componentes-form/componentes-form.component';
 import { CadastrarUsuarioComponent } from './cadastrar-usuario/cadastrar-usuario.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { UsuariosComponent } from './usuarios/usuarios.component';
 
 @NgModule({
   declarations: [
@@ -19,8 +21,10 @@ import { CadastrarUsuarioComponent } from './cadastrar-usuario/cadastrar-usuario
     HomeComponent,
     ComponentesFormComponent,
     CadastrarUsuarioComponent,
+    UsuariosComponent,
 
   ],
-  imports: [CommonModule, ComponentesRoutingModule, AppMaterialModule, SharedModule,],
+  imports: [CommonModule, ComponentesRoutingModule, AppMaterialModule, SharedModule,    ReactiveFormsModule,
+  ],
 })
 export class ComponentesModule {}
