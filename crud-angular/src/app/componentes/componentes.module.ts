@@ -12,6 +12,7 @@ import { ComponentesFormComponent } from './componentes-form/componentes-form.co
 import { CadastrarUsuarioComponent } from './cadastrar-usuario/cadastrar-usuario.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UsuariosComponent } from './usuarios/usuarios.component';
+import { CadastrarCartaoComponent } from './cadastrar-cartao/cadastrar-cartao.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
     ComponentesFormComponent,
     CadastrarUsuarioComponent,
     UsuariosComponent,
+    CadastrarCartaoComponent,
 
   ],
   imports: [CommonModule, ComponentesRoutingModule, AppMaterialModule, SharedModule,    ReactiveFormsModule,

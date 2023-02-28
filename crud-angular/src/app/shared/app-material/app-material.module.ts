@@ -13,6 +13,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatInputModule} from '@angular/material/input';
+
 
 
 
@@ -36,6 +38,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     FormsModule,
     MatSlideToggleModule,
     MatSnackBarModule,
+    MatInputModule,
 
   ],
 })

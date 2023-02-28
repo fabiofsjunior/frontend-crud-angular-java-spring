@@ -1,0 +1,45 @@
+<div>
+  <h1>Cadastrar de um novo cartão</h1>
+  <p>
+    Escolha um tipo de cartão em seguida no botão ao lado em "Cadastrar Cartão".
+  </p>
+</div>
+
+<mat-card>
+  <mat-card-content>
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <label>First name</label>
+        <input matInput />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput placeholder="Ex. pat@example.com" />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>{{gerarNumeroCartao()}}</mat-label>
+        <input matInput disabled value="">
+      </mat-form-field>
+
+      <mat-form-field class="example-container" appearance="fill">
+        <mat-label>Escolher cartão</mat-label>
+        <mat-select>
+          <mat-option value="comum">Comum</mat-option>
+          <mat-option value="estudante">Estudante</mat-option>
+          <mat-option value="trabalhador">Trabalhador</mat-option>
+        </mat-select>
+        <mat-hint align="end">Selecione uma opção</mat-hint>
+      </mat-form-field>
+    </form>
+
+    <section class="example-container">
+      <div class="example-button-row">
+        <button color="primary" routerLink="cadastrar/cartao" mat-raised-button>
+          Solicitar Cartão
+        </button>
+      </div>
+    </section>
+  </mat-card-content>
+</mat-card>

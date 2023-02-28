@@ -22,7 +22,7 @@ export class CartoesService {
   }
 
   list() {
-    return this.httpClient.get<Cartoes[]>(this.arquivoJson).pipe(
+    return this.httpClient.get<Cartoes[]>(this.API).pipe(
       first(),
       delay(2000),
       tap((cartoes) => console.log(cartoes))
