@@ -7,9 +7,9 @@
 <section>
   <div class="example-button-row">
     <button
-      color="accent"
-      routerLink="solicitacoes"
-      mat-raised-button
+      color="primary"
+      routerLink="cadastrar/cartao"
+      mat-stroked-button
       (click)="onSolicitarCartao()"
     >
       Novo Cartão
@@ -17,14 +17,15 @@
   </div>
   <div class="example-button-row">
     <button
-      color="primary"
+      color="accent"
       routerLink="cadastrar/usuario"
-      mat-raised-button
+      mat-stroked-button
       (click)="onSolicitarCartao()"
     >
-      Novo Usuário
+      Novo Usuario
     </button>
   </div>
+
 </section>
 
 <div *ngIf="cartoes$ | async as cartoes; else loading" class="content">
