@@ -20,6 +20,8 @@ export class CartoesComponent {
 
   cards: Cartoes[] = [];
 
+  loading = false;
+
   displayedColumns: string[] = [
     '_id',
     'numeroCartao',
@@ -71,4 +73,6 @@ export class CartoesComponent {
   onSolicitarCartao(): void {
     console.log('Sucesso ao chamar o método - onSolicitarCartao()');
   }
+
+ 
 }
