@@ -1,18 +1,20 @@
-import { UsuarioService } from './../services/usuario.service';
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Observable, catchError, of } from 'rxjs';
+import { catchError, Observable, of } from 'rxjs';
 import { EditarDialogComponent } from 'src/app/shared/components/editar-dialog/editar-dialog.component';
 import { ErrorDialogComponent } from 'src/app/shared/components/error-dialog/error-dialog.component';
 import { ExcluirDialogComponent } from 'src/app/shared/components/excluir-dialog/excluir-dialog.component';
-import { Cartoes } from '../model/cartoes';
-import { CartoesService } from '../services/cartoes.service';
+
 import { Usuarios } from '../model/usuarios';
+import {
+  ExibirCartoesUsuarioComponent,
+} from './../../shared/components/exibir-cartoes-usuario/exibir-cartoes-usuario.component';
+import { UsuarioService } from './../services/usuario.service';
 
 @Component({
   selector: 'app-usuarios',
   templateUrl: './usuarios.component.html',
-  styleUrls: ['./usuarios.component.scss']
+  styleUrls: ['./usuarios.component.scss'],
 })
 export class UsuariosComponent {
   usuarios$: Observable<Usuarios[]>;
@@ -27,8 +29,6 @@ export class UsuariosComponent {
     'editar',
     'excluir',
   ];
-
-
 
   constructor(
     private usuarioService: UsuarioService,
@@ -49,19 +49,22 @@ export class UsuariosComponent {
     });
   }
 
-  onCriarUsuario(){
+  onCriarUsuario() {}
 
-  }
+  onVerCartoes() {
+    console.log('Sucesso ao chamar o método - onEditar()');
+    const dialogRef = this.dialog.open(ExibirCartoesUsuarioComponent);
 
-  onVerCartoes(){
-    
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 
   onEditar(): void {
     console.log('Sucesso ao chamar o método - onEditar()');
     const dialogRef = this.dialog.open(EditarDialogComponent);
 
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
     });
   }
@@ -69,7 +72,7 @@ export class UsuariosComponent {
     console.log('Sucesso ao chamar o método - onExcluir()');
     const dialogRef = this.dialog.open(ExcluirDialogComponent);
 
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
     });
   }
@@ -77,6 +80,4 @@ export class UsuariosComponent {
   onSolicitarCartao(): void {
     console.log('Sucesso ao chamar o método - onSolicitarCartao()');
   }
-
-
 }

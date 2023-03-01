@@ -7,6 +7,7 @@ import { ExcluirDialogComponent } from './components/excluir-dialog/excluir-dial
 import { CategoryPipe } from './pipes/category.pipe';
 import { CartaoPipe } from './pipes/status/cartao.pipe';
 import { EditarDialogComponent } from './components/editar-dialog/editar-dialog.component';
+import { ExibirCartoesUsuarioComponent } from './components/exibir-cartoes-usuario/exibir-cartoes-usuario.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { EditarDialogComponent } from './components/editar-dialog/editar-dialog.
     CartaoPipe,
     ExcluirDialogComponent,
     EditarDialogComponent,
+    ExibirCartoesUsuarioComponent,
   ],
   imports: [CommonModule, AppMaterialModule],
   exports: [ErrorDialogComponent, CartaoPipe, ExcluirDialogComponent, EditarDialogComponent],

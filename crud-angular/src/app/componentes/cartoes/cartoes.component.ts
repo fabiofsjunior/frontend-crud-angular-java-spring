@@ -18,8 +18,6 @@ import { CartoesService } from './../services/cartoes.service';
 export class CartoesComponent {
   cartoes$: Observable<Cartoes[]>;
 
-  cards: Cartoes[] = [];
-
   loading = false;
 
   displayedColumns: string[] = [
@@ -50,9 +48,7 @@ export class CartoesComponent {
       data: errorMsg,
     });
   }
-  getCards(): void {
-    this.cartoesService.getAll().subscribe((cards) => (this.cards = cards));
-  }
+
   onEditar(): void {
     console.log('Sucesso ao chamar o método - onEditar()');
     const dialogRef = this.dialog.open(EditarDialogComponent);
@@ -74,5 +70,5 @@ export class CartoesComponent {
     console.log('Sucesso ao chamar o método - onSolicitarCartao()');
   }
 
- 
+
 }
