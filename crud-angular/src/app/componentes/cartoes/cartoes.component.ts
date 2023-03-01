@@ -1,3 +1,4 @@
+import { CadastrarCartaoComponent } from './../cadastrar-cartao/cadastrar-cartao.component';
 import { EditarDialogComponent } from './../../shared/components/editar-dialog/editar-dialog.component';
 import { ExcluirDialogComponent } from './../../shared/components/excluir-dialog/excluir-dialog.component';
 import { Component } from '@angular/core';
@@ -9,6 +10,7 @@ import { catchError } from 'rxjs/internal/operators/catchError';
 import { Cartoes } from '../model/cartoes';
 import { ErrorDialogComponent } from './../../shared/components/error-dialog/error-dialog.component';
 import { CartoesService } from './../services/cartoes.service';
+import { CadastrarCartaoDialogComponent } from 'src/app/shared/components/cadastrar-cartao-dialog/cadastrar-cartao-dialog.component';
 
 @Component({
   selector: 'app-cartoes',
@@ -68,6 +70,11 @@ export class CartoesComponent {
 
   onSolicitarCartao(): void {
     console.log('Sucesso ao chamar o método - onSolicitarCartao()');
+    const dialogRef = this.dialog.open(CadastrarCartaoDialogComponent);
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 
 

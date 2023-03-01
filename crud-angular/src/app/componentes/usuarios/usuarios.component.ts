@@ -1,3 +1,4 @@
+import { CadastrarUsuarioComponent } from './../cadastrar-usuario/cadastrar-usuario.component';
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { catchError, Observable, of } from 'rxjs';
@@ -49,10 +50,19 @@ export class UsuariosComponent {
     });
   }
 
-  onCriarUsuario() {}
+  onCriarUsuario() {
+    console.log('Sucesso ao chamar o método - onCriarUsuario()');
+    const dialogRef = this.dialog.open(CadastrarUsuarioComponent);
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`);
+    });
+  
+
+  }
 
   onVerCartoes() {
-    console.log('Sucesso ao chamar o método - onEditar()');
+    console.log('Sucesso ao chamar o método - onVerCartoes()');
     const dialogRef = this.dialog.open(ExibirCartoesUsuarioComponent);
 
     dialogRef.afterClosed().subscribe((result) => {

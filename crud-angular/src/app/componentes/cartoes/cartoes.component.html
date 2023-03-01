@@ -10,7 +10,6 @@
   <div class="example-button-row">
     <button
       color="primary"
-      routerLink="cadastrar/cartao"
       mat-stroked-button
       (click)="onSolicitarCartao()"
     >
@@ -21,7 +20,7 @@
 
 <div *ngIf="cartoes$ | async as cartoes; else loading" class="content">
   <table mat-table [dataSource]="cartoes$" class="mat-elevation-z8">
-    
+
     <!-- Nº Column -->
     <ng-container matColumnDef="_id">
       <th mat-header-cell *matHeaderCellDef>Nº</th>

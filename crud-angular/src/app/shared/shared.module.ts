@@ -8,6 +8,8 @@ import { CategoryPipe } from './pipes/category.pipe';
 import { CartaoPipe } from './pipes/status/cartao.pipe';
 import { EditarDialogComponent } from './components/editar-dialog/editar-dialog.component';
 import { ExibirCartoesUsuarioComponent } from './components/exibir-cartoes-usuario/exibir-cartoes-usuario.component';
+import { CadastrarCartaoDialogComponent } from './components/cadastrar-cartao-dialog/cadastrar-cartao-dialog.component';
+import { CadastrarUsuarioDialogComponent } from './components/cadastrar-usuario-dialog/cadastrar-usuario-dialog.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { ExibirCartoesUsuarioComponent } from './components/exibir-cartoes-usuar
     ExcluirDialogComponent,
     EditarDialogComponent,
     ExibirCartoesUsuarioComponent,
+    CadastrarCartaoDialogComponent,
+    CadastrarUsuarioDialogComponent,
   ],
   imports: [CommonModule, AppMaterialModule],
   exports: [ErrorDialogComponent, CartaoPipe, ExcluirDialogComponent, EditarDialogComponent],
