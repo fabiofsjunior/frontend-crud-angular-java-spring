@@ -1,3 +1,5 @@
+import { UsuariosComponent } from './componentes/usuarios/usuarios.component';
+import { CadastrarCartaoComponent } from './componentes/cadastrar-cartao/cadastrar-cartao.component';
 import { CadastrarUsuarioComponent } from './componentes/cadastrar-usuario/cadastrar-usuario.component';
 import { HomeComponent } from './componentes/home/home.component';
 import { NgModule } from '@angular/core';
@@ -10,11 +12,20 @@ import { SolicitacoesComponent } from './componentes/solicitacoes/solicitacoes.c
 const routes: Routes = [
   {path: "", pathMatch: "full", component: HomeComponent},
   { path: 'cartoes', pathMatch: 'full', component: CartoesComponent },
+  { path: 'usuarios', pathMatch: 'full', component: UsuariosComponent },
   { path: 'autenticacao', pathMatch: 'full', component: AutenticacaoComponent },
   { path: 'solicitacoes', pathMatch: 'full', component: SolicitacoesComponent },
-  { path: 'cadastrar/usuario', pathMatch: 'full', component: CadastrarUsuarioComponent },
+  { path: 'cartoes/cartoes', pathMatch: 'full', component: CadastrarCartaoComponent },
+  { path: 'cartoes/usuarios', pathMatch: 'full', component: CadastrarUsuarioComponent },
   {
     path: 'autenticacao',
+    loadChildren: () =>
+      import('./componentes/componentes.module').then(
+        (m) => m.ComponentesModule
+      ),
+  },
+  {
+    path: 'usuarios',
     loadChildren: () =>
       import('./componentes/componentes.module').then(
         (m) => m.ComponentesModule

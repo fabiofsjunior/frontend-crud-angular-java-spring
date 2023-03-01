@@ -1,1 +1,20 @@
-<p>usuarios works!</p>
+<app-menu></app-menu>
+
+<h1>Usuarios Cadastrados no Sistema</h1>
+<p>
+  Aqui você pode verificar o status dos seus cartões, atualizar dados, excluir e
+  solicitar um novo caso desejar, basta selecionar ou clicar no botão ao lado.
+</p>
+
+<section>
+  <div class="example-button-row">
+    <button
+      color="primary"
+      routerLink="cadastrar/usuario"
+      mat-stroked-button
+      (click)="onCriarUsuario()"
+    >
+      Novo Usuário
+    </button>
+  </div>
+</section>

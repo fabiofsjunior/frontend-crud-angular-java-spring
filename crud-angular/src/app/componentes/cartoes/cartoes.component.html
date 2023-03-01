@@ -17,17 +17,6 @@
       Novo Cartão
     </button>
   </div>
-  <div class="example-button-row">
-    <button
-      color="accent"
-      routerLink="cadastrar/usuario"
-      mat-stroked-button
-      (click)="onSolicitarCartao()"
-    >
-      Novo Usuario
-    </button>
-  </div>
-
 </section>
 
 <div *ngIf="cartoes$ | async as cartoes; else loading" class="content">
