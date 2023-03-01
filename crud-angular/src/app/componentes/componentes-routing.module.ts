@@ -10,11 +10,11 @@ import { SolicitacoesComponent } from './solicitacoes/solicitacoes.component';
 const routes: Routes = [
   // {path:"", component: AutenticacaoComponent},
   // {path:"autenticacao?email=&password=&submit=Continue", pathMatch: "full", redirectTo: 'cartoes'},
-  { path:'cartoes', pathMatch: 'full', component: CartoesComponent},
-  { path: 'usuarios', pathMatch: 'full', component: UsuariosComponent },
-  { path: 'solicitacoes', pathMatch: 'full', component: SolicitacoesComponent },
-  { path: 'cartoes/cartoes', pathMatch: 'full', component: CadastrarCartaoComponent },
-  { path: 'cartoes/usuarios', pathMatch: 'full', component: CadastrarUsuarioComponent },
+  { path:'cartoes',  component: CartoesComponent},
+  { path: 'usuarios', component: UsuariosComponent },
+  // { path: 'solicitacoes', pathMatch: 'full', component: SolicitacoesComponent },
+  // { path: 'cartoes/cartoes', pathMatch: 'prefix', component: CadastrarCartaoComponent },
+  // { path: 'cartoes/usuarios', pathMatch: 'prefix', component: CadastrarUsuarioComponent },
 
   {
     path: 'usuarios',

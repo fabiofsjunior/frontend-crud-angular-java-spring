@@ -14,9 +14,9 @@ const routes: Routes = [
   { path: 'cartoes', pathMatch: 'full', component: CartoesComponent },
   { path: 'usuarios', pathMatch: 'full', component: UsuariosComponent },
   { path: 'autenticacao', pathMatch: 'full', component: AutenticacaoComponent },
-  { path: 'solicitacoes', pathMatch: 'full', component: SolicitacoesComponent },
-  { path: 'cartoes/cartoes', pathMatch: 'full', component: CadastrarCartaoComponent },
-  { path: 'cartoes/usuarios', pathMatch: 'full', component: CadastrarUsuarioComponent },
+  // { path: 'solicitacoes', pathMatch: 'full', component: SolicitacoesComponent },
+  // { path: 'cartoes/cartoes', pathMatch: 'full', component: CadastrarCartaoComponent },
+  // { path: 'cartoes/usuarios', pathMatch: 'full', component: CadastrarUsuarioComponent },
   {
     path: 'autenticacao',
     loadChildren: () =>

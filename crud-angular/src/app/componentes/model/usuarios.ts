@@ -1,8 +1,10 @@
 export interface Usuarios {
 
   _id: string;
-  nomeCompleto: string;
-  email: string;
-  senha: string;
+  nomeUsuario: string;
+  emailUsuario: string;
+  senhaUsuario: string;
+  cartoesUsuario: string[];
+
 
 }
