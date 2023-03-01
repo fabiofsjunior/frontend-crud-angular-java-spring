@@ -23,6 +23,6 @@ import { CadastrarUsuarioDialogComponent } from './components/cadastrar-usuario-
     CadastrarUsuarioDialogComponent,
   ],
   imports: [CommonModule, AppMaterialModule],
-  exports: [ErrorDialogComponent, CartaoPipe, ExcluirDialogComponent, EditarDialogComponent],
+  exports: [ErrorDialogComponent, CartaoPipe, ExcluirDialogComponent, EditarDialogComponent, CadastrarCartaoDialogComponent, CadastrarUsuarioDialogComponent,]
 })
 export class SharedModule {}

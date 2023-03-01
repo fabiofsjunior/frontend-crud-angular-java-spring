@@ -1,3 +1,4 @@
+import { CadastrarUsuarioDialogComponent } from './../../shared/components/cadastrar-usuario-dialog/cadastrar-usuario-dialog.component';
 import { CadastrarUsuarioComponent } from './../cadastrar-usuario/cadastrar-usuario.component';
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
@@ -52,12 +53,12 @@ export class UsuariosComponent {
 
   onCriarUsuario() {
     console.log('Sucesso ao chamar o método - onCriarUsuario()');
-    const dialogRef = this.dialog.open(CadastrarUsuarioComponent);
+    const dialogRef = this.dialog.open(ErrorDialogComponent);
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
     });
-  
+
 
   }
 

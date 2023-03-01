@@ -70,7 +70,7 @@ export class CartoesComponent {
 
   onSolicitarCartao(): void {
     console.log('Sucesso ao chamar o método - onSolicitarCartao()');
-    const dialogRef = this.dialog.open(CadastrarCartaoDialogComponent);
+    const dialogRef = this.dialog.open(ErrorDialogComponent);
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
