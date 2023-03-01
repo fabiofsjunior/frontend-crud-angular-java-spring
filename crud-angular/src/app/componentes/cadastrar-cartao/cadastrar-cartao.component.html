@@ -7,28 +7,44 @@
 
 <mat-card>
   <mat-card-content>
-    <form class="example-form">
+    <form class="example-form" [formGroup]="form">
       <mat-form-field class="example-full-width">
-        <label>First name</label>
-        <input matInput />
+        <mat-label>Nome Completo</mat-label>
+        <input matInput formControlName="nomeCartao" />
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
         <mat-label>Email</mat-label>
-        <input type="email" matInput placeholder="Ex. pat@example.com" />
+        <input
+          type="email"
+          matInput
+          placeholder="Ex. pat@example.com"
+          formControlName="emailCartao"
+        />
       </mat-form-field>
-
       <mat-form-field class="example-full-width">
-        <mat-label>{{gerarNumeroCartao()}}</mat-label>
-        <input matInput disabled value="">
+        <input class="hide" matInput disabled />
+        <mat-label></mat-label>
+        <input
+          maxlength="15"
+          matInput
+          value="{{ numeroCartao }}"
+          formControlName="numeroCartao"
+        />
       </mat-form-field>
 
       <mat-form-field class="example-container" appearance="fill">
         <mat-label>Escolher cartão</mat-label>
-        <mat-select>
-          <mat-option value="comum">Comum</mat-option>
-          <mat-option value="estudante">Estudante</mat-option>
-          <mat-option value="trabalhador">Trabalhador</mat-option>
+        <mat-select formControlName="tipoCartao">
+          <mat-option value="comum" (click)="gerarNumeroCartao()"
+            >COMUM</mat-option
+          >
+          <mat-option value="estudante" (click)="gerarNumeroCartao()"
+            >ESTUDANTE</mat-option
+          >
+          <mat-option value="trabalhador" (click)="gerarNumeroCartao()"
+            >TRABALHADOR</mat-option
+          >
         </mat-select>
         <mat-hint align="end">Selecione uma opção</mat-hint>
       </mat-form-field>
@@ -36,7 +52,12 @@
 
     <section class="example-container">
       <div class="example-button-row">
-        <button color="primary" routerLink="cadastrar/cartao" mat-raised-button>
+        <button
+          (click)="onSubmit()"
+          color="primary"
+          routerLink="cadastrar/cartao"
+          mat-raised-button
+        >
           Solicitar Cartão
         </button>
       </div>
