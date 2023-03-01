@@ -13,6 +13,7 @@ import { CadastrarUsuarioComponent } from './cadastrar-usuario/cadastrar-usuario
 import { ReactiveFormsModule } from '@angular/forms';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { CadastrarCartaoComponent } from './cadastrar-cartao/cadastrar-cartao.component';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { CadastrarCartaoComponent } from './cadastrar-cartao/cadastrar-cartao.co
     CadastrarUsuarioComponent,
     UsuariosComponent,
     CadastrarCartaoComponent,
+    MenuComponent,
 
   ],
   imports: [CommonModule, ComponentesRoutingModule, AppMaterialModule, SharedModule,    ReactiveFormsModule,
