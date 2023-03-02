@@ -72,7 +72,7 @@ export class CartoesComponent {
       console.log(`Dialog result: ${result}`);
     });
   }
-  onExcluir(id: string): void {
+  onExcluir(id: number): void {
 
     console.log('Sucesso ao chamar o método - onExcluir()'+ JSON.stringify(id));
     const dialogRef = this.dialog.open(ExcluirDialogComponent, {data: { id: id}});

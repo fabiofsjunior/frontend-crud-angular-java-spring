@@ -10,11 +10,15 @@ import { CartoesService } from 'src/app/componentes/services/cartoes.service';
 export class ExcluirDialogComponent {
   constructor(
     private cartoesService: CartoesService,
-    @Inject(MAT_DIALOG_DATA) public dataId: string
+    @Inject(MAT_DIALOG_DATA) public dataId: number
   ) {}
 
-  deletarByid(id: string): void {
-    this.cartoesService.deletarByid(id);
+  deletarByid(id: number): void {
+    console.log('Sucesso ao chamar o método - deletarByid()'+ JSON.stringify(id));
+
+    this.cartoesService.deletarCartaoByid(id);
     console.log(id);
   }
+
+
 }

@@ -15,7 +15,6 @@ export class CartoesService {
   //path da API
   private readonly arquivoJson = '/assets/cartoes.json';
   private readonly API = 'http://localhost:8080/api/cartao';
-  private readonly apiById = 'http://localhost:8080/api/cartao/:id';
 
   constructor(private httpClient: HttpClient) {}
 
@@ -28,7 +27,7 @@ export class CartoesService {
     );
   }
   listarById(_id: string): Observable<number> {
-    return this.httpClient.get<Cartoes[]>(this.apiById).pipe(
+    return this.httpClient.get<Cartoes[]>(this.API).pipe(
       first(),
       delay(2000),
       map((cartoes) => cartoes.filter(c => c._id === _id).length),
@@ -42,10 +41,15 @@ export class CartoesService {
     );
   }
 
-  deletarByid(id: any): void{
+  deletarByid(id: number): void{
     console.log("deletando pelo id: " + JSON.stringify(id))
     this.httpClient.delete<Cartoes>(this.API+`/${id}`).subscribe();
 
+  }
+
+  deletarCartaoByid(id: any): void{
+    console.log("CartoesService => Sucesso no DELETE Cartão : ")
+    this.httpClient.delete<Cartoes>(this.API+`/${id.id}`).subscribe();
 
   }
 }
