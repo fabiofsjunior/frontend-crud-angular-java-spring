@@ -14,11 +14,8 @@ export class ExcluirDialogComponent {
   ) {}
 
   deletarByid(id: number): void {
-    console.log('Sucesso ao chamar o método - deletarByid()'+ JSON.stringify(id));
-
     this.cartoesService.deletarCartaoByid(id);
     console.log(id);
   }
-
 
 }

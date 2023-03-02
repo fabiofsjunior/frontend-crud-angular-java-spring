@@ -10,7 +10,7 @@ import { ExcluirDialogComponent } from '../excluir-dialog/excluir-dialog.compone
 @Component({
   selector: 'app-exibir-cartoes-usuario',
   templateUrl: './exibir-cartoes-usuario.component.html',
-  styleUrls: ['./exibir-cartoes-usuario.component.scss']
+  styleUrls: ['./exibir-cartoes-usuario.component.scss'],
 })
 export class ExibirCartoesUsuarioComponent {
   cartoes$: Observable<Cartoes[]>;
@@ -18,7 +18,6 @@ export class ExibirCartoesUsuarioComponent {
   loading = false;
 
   displayedColumns: string[] = [
-
     'numeroCartao',
     'nomeCartao',
     'statusCartao',
@@ -45,11 +44,16 @@ export class ExibirCartoesUsuarioComponent {
     });
   }
 
+  onExcluir(id: number) {
+    console.log('Chamando botão excluir, ExibirCartoes.ts');
+    // this.cartoesService.deletarByid(id);
+    const dialogRef = this.dialog.open(ExcluirDialogComponent);
 
-  onExcluir(id: number){
-    console.log("Chamando botão excluir, ExibirCartoes.ts")
-    this.cartoesService.deletarByid(id)
-
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`se Confirmar ele deleta o ficheiro: ${result}`);
+      if (result == true) {
+        this.cartoesService.deletarByid(id);
+      }
+    });
   }
-
 }
