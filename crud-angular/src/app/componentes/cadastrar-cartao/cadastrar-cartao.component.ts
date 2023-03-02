@@ -24,18 +24,18 @@ constructor(
   });
 }
 
-gerarNumeroCartao(): string {
-  const parteAleatoria = Math.floor(Math.random() * 100000000)
-    .toString()
-    .padStart(8, '0');
+// gerarNumeroCartao(): string {
+//   const parteAleatoria = Math.floor(Math.random() * 100000000)
+//     .toString()
+//     .padStart(8, '0');
 
-  // Concatenar a parte aleatória com o prefixo e sufixo do template
-  const numeroGerado = `90.0.${parteAleatoria}-0`;
+//   // Concatenar a parte aleatória com o prefixo e sufixo do template
+//   const numeroGerado = `90.0.${parteAleatoria}-0`;
 
-  // Retornar o número gerado
-  this.numeroCartao = numeroGerado;
-  return this.numeroCartao;
-}
+//   // Retornar o número gerado
+//   this.numeroCartao = numeroGerado;
+//   return this.numeroCartao;
+// }
 
 onSubmit(): void {
   console.log(this.service.save(this.form.value));

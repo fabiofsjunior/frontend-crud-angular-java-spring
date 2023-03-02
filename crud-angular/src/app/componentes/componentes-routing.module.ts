@@ -1,3 +1,4 @@
+import { CadastrarUsuarioComponent } from './cadastrar-usuario/cadastrar-usuario.component';
 import { CadastrarCartaoComponent } from './cadastrar-cartao/cadastrar-cartao.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -11,8 +12,8 @@ const routes: Routes = [
   { path:'cartoes',  component: CartoesComponent},
   { path: 'usuarios', component: UsuariosComponent },
   // { path: 'solicitacoes', pathMatch: 'full', component: SolicitacoesComponent },
-  { path: 'cartoes/cartoes', pathMatch: 'full', component: CadastrarCartaoComponent },
-  // { path: 'cartoes/usuarios', pathMatch: 'full', component: CadastrarUsuarioComponent },
+  // { path: 'cartoes/cartoes', pathMatch: 'full', component: CadastrarCartaoComponent },
+  // { path: 'usuario/usuarios', pathMatch: 'full', component: CadastrarUsuarioComponent },
 
   {
     path: 'usuarios',

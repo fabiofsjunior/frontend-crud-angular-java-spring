@@ -1,79 +1,44 @@
 <mat-card>
-  <mat-card-content>
-    <div class="login-root">
-      <div
-        class="box-root padding-top--24 flex-flex flex-direction--column"
-        style="flex-grow: 1; z-index: 9"
+  <div>
+    <h1>Cadastrar de um novo cartão</h1>
+    <p>
+      Escolha um tipo de cartão em seguida no botão ao lado em "Cadastrar
+      Cartão".
+    </p>
+  </div>
+
+  <form id="stripe-login" [formGroup]="form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Nome Completo</mat-label>
+      <input formControlName="nomeUsuario" matInput />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Email</mat-label>
+      <input
+        formControlName="emailUsuario"
+        type="email"
+        matInput
+        placeholder="Ex. pat@example.com"
+      />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Senha</mat-label>
+      <input formControlName="senhaUsuario" type="password" matInput />
+    </mat-form-field>
+  </form>
+
+  <section class="example-container">
+    <div class="example-button-row">
+      <button
+        (click)="onSubmit()"
+        color="primary"
+        routerLink="usuarios"
+        mat-raised-button
       >
-        <div
-          class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center"
-        >
-          <h1><a href="#" rel="dofollow">Cadastro</a></h1>
-        </div>
-        <div class="formbg-outer">
-          <div class="formbg">
-            <div class="formbg-inner padding-horizontal--48">
-              <span class="padding-bottom--15">Cadastre-se</span>
-              <form id="stripe-login" [formGroup]="form">
-                <div class="field padding-bottom--24">
-                  <label for="text">Nome Completo</label>
-                  <input
-                    matInput
-                    formControlName="nomeUsuario"
-                    placeholder="Nome Completo"
-                    type="text"
-                    name="text"
-                  />
-                </div>
-                <div class="field padding-bottom--24">
-                  <label for="email">Email</label>
-                  <input
-                    matInput
-                    formControlName="emailUsuario"
-                    placeholder="Email"
-                    type="email"
-                    name="email"
-                  />
-                </div>
-                <div class="field padding-bottom--24">
-                  <div class="grid--50-50">
-                    <label for="password">Senha</label>
-                    <div class="reset-pass">
-                      <a href="#">Esqueci minha senha.</a>
-                    </div>
-                  </div>
-                  <input
-                    matInput
-                    formControlName="senhaUsuario"
-                    placeholder="Senha"
-                    type="password"
-                    name="password"
-                  />
-                </div>
-                <div class="field padding-bottom--24">
-                  <input
-                    id="sumbmit"
-                    type="submit"
-                    name="submit"
-                    value="Cadastrar"
-                    routerLink="usuarios"
-                    (click)="onSubmit()"
-                  />
-                </div>
-              </form>
-            </div>
-          </div>
-          <div class="footer-link padding-top--24">
-            <div
-              class="listing padding-top--24 padding-bottom--24 flex-flex center-center"
-            >
-              <span><a href="#">© CRUD - ANGULAR, JAVA, SPRING</a></span>
-              <span><a href="#">Contato</a></span>
-              <span><a href="#">Termos & Privadidade</a></span>
-            </div>
-          </div>
-        </div>
-      </div>
+        Solicitar Cartão
+      </button>
     </div>
-  </mat-card-content>
+  </section>
 </mat-card>

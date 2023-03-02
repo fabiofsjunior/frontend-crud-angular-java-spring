@@ -1,3 +1,5 @@
+import { ActivatedRoute } from '@angular/router';
+import { CadastrarUsuarioComponent } from './../cadastrar-usuario/cadastrar-usuario.component';
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { catchError, Observable, of } from 'rxjs';
@@ -31,6 +33,7 @@ export class UsuariosComponent {
   ];
 
   constructor(
+    public route: ActivatedRoute,
     private usuarioService: UsuarioService,
     public dialog: MatDialog
   ) {
@@ -51,7 +54,7 @@ export class UsuariosComponent {
 
   onCriarUsuario() {
     console.log('Sucesso ao chamar o método - onCriarUsuario()');
-    const dialogRef = this.dialog.open(ErrorDialogComponent);
+    const dialogRef = this.dialog.open(CadastrarUsuarioComponent);
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);

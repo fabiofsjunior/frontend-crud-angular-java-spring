@@ -1,3 +1,4 @@
+import { CadastrarCartaoComponent } from './../cadastrar-cartao/cadastrar-cartao.component';
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
@@ -79,6 +80,11 @@ export class CartoesComponent {
 
   onSolicitarCartao(): void {
     console.log('Sucesso ao chamar o método - onSolicitarCartao()');
+    const dialogRef = this.dialog.open(CadastrarCartaoComponent);
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`);
+    });
 
   }
 
