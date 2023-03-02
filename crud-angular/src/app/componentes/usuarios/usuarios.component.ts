@@ -54,7 +54,10 @@ export class UsuariosComponent {
 
   onCriarUsuario() {
     console.log('Sucesso ao chamar o método - onCriarUsuario()');
-    const dialogRef = this.dialog.open(CadastrarUsuarioComponent);
+    const dialogRef = this.dialog.open(CadastrarUsuarioComponent, {
+      autoFocus: false,
+      closeOnNavigation: false
+    });
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);

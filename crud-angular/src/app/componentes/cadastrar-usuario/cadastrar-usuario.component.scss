@@ -1,4 +1,9 @@
-.example-form, .example-container {
+mat-card {
+  display: flex;
+  margin: auto;
+  padding: 50px;
+}
+.example-form {
   min-width: 150px;
   max-width: 500px;
   width: 100%;
@@ -8,20 +13,8 @@
   width: 100%;
 }
 
-mat-card{
+.button-container {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  width: fit-content;
-  margin: auto;
-  padding: 50px;
-}
 
-
-.hide{
-  display: block;
-  position: absolute;
-  margin: 0;
-  padding: 0;
-  z-index: 999;
+  flex-direction: row-reverse;
 }
