@@ -43,14 +43,8 @@ export class CartoesService {
   }
 
   deletarByid(id: any): void{
-    // console.log("deletando pelo id: " + JSON.stringify(id)
-    // )
-    // this.httpClient.delete<Cartoes>(this.API+`/${id}`).subscribe(
-
-    // );
-
-    this.httpClient.delete(this.API+`/${id.id}`)
-        .subscribe();
+    console.log("deletando pelo id: " + JSON.stringify(id))
+    this.httpClient.delete<Cartoes>(this.API+`/${id}`).subscribe();
 
 
   }

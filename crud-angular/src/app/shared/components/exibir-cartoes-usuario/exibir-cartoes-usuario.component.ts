@@ -23,6 +23,7 @@ export class ExibirCartoesUsuarioComponent {
     'nomeCartao',
     'statusCartao',
     'tipoCartao',
+    'excluir',
   ];
 
   constructor(
@@ -45,6 +46,10 @@ export class ExibirCartoesUsuarioComponent {
   }
 
 
+  onExcluir(id: number){
+    console.log("Chamando botão excluir, ExibirCartoes.ts")
+    this.cartoesService.deletarByid(id)
 
+  }
 
 }
