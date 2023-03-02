@@ -1,9 +1,14 @@
 <mat-card>
   <mat-card-content>
-  <form >
-    <div class="login-root">
-        <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
-          <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
+    <form>
+      <div class="login-root">
+        <div
+          class="box-root padding-top--24 flex-flex flex-direction--column"
+          style="flex-grow: 1; z-index: 9"
+        >
+          <div
+            class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center"
+          >
             <h1><a href="#">Login</a></h1>
           </div>
           <div class="formbg-outer">
@@ -13,7 +18,12 @@
                 <form id="stripe-login">
                   <div class="field padding-bottom--24">
                     <label for="email">Email</label>
-                    <input formControlName="Email" placeholder="Email" type="email" name="email">
+                    <input
+                      formControlName="Email"
+                      placeholder="Email"
+                      type="email"
+                      name="email"
+                    />
                   </div>
                   <div class="field padding-bottom--24">
                     <div class="grid--50-50">
@@ -22,22 +32,37 @@
                         <a href="#">Esqueci minha senha.</a>
                       </div>
                     </div>
-                    <input placeholder="Senha" type="password" name="password">
+                    <input
+                      placeholder="Senha"
+                      type="password"
+                      name="password"
+                    />
                   </div>
-                  <div class="field field-checkbox padding-bottom--24 flex-flex align-center">
+                  <div
+                    class="field field-checkbox padding-bottom--24 flex-flex align-center"
+                  >
                     <label for="checkbox">
-                      <input type="checkbox" name="checkbox">Manter-me conectado
+                      <input type="checkbox" name="checkbox" />Manter-me
+                      conectado
                     </label>
                   </div>
                   <div class="field padding-bottom--24">
-                    <input id="sumbmit" routerLink="/cartoes" type="submit" name="submit" value="Continue"/>
+                    <input
+                      id="sumbmit"
+                      routerLink="/usuarios"
+                      type="submit"
+                      name="submit"
+                      value="Continue"
+                    />
                   </div>
                 </form>
               </div>
             </div>
             <div class="footer-link padding-top--24">
-              <span ><a href="#">Clique Aqui</a> para criar sua conta</span>
-              <div class="listing padding-top--24 padding-bottom--24 flex-flex center-center">
+              <span><a href="#">Clique Aqui</a> para criar sua conta</span>
+              <div
+                class="listing padding-top--24 padding-bottom--24 flex-flex center-center"
+              >
                 <span><a href="#">© CRUD - ANGULAR, JAVA, SPRING</a></span>
                 <span><a href="#">Contato</a></span>
                 <span><a href="#">Termos & Privadidade</a></span>
@@ -46,6 +71,6 @@
           </div>
         </div>
       </div>
-  </form>
+    </form>
   </mat-card-content>
 </mat-card>
