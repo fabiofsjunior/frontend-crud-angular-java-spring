@@ -1,6 +1,6 @@
 export interface Usuarios {
 
-  _id: string;
+  idUsuario: string;
   nomeUsuario: string;
   emailUsuario: string;
   senhaUsuario: string;
