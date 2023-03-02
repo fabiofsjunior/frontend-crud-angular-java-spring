@@ -1,13 +1,10 @@
-import { UsuariosComponent } from './componentes/usuarios/usuarios.component';
-import { CadastrarCartaoComponent } from './componentes/cadastrar-cartao/cadastrar-cartao.component';
-import { CadastrarUsuarioComponent } from './componentes/cadastrar-usuario/cadastrar-usuario.component';
-import { HomeComponent } from './componentes/home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AutenticacaoComponent } from './componentes/autenticacao/autenticacao.component';
 import { CartoesComponent } from './componentes/cartoes/cartoes.component';
-import { SolicitacoesComponent } from './componentes/solicitacoes/solicitacoes.component';
+import { HomeComponent } from './componentes/home/home.component';
+import { UsuariosComponent } from './componentes/usuarios/usuarios.component';
 
 const routes: Routes = [
   {path: "", pathMatch: "full", component: HomeComponent},

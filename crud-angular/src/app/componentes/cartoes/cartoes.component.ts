@@ -1,16 +1,15 @@
-import { CadastrarCartaoComponent } from './../cadastrar-cartao/cadastrar-cartao.component';
-import { EditarDialogComponent } from './../../shared/components/editar-dialog/editar-dialog.component';
-import { ExcluirDialogComponent } from './../../shared/components/excluir-dialog/excluir-dialog.component';
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/internal/Observable';
 import { of } from 'rxjs/internal/observable/of';
 import { catchError } from 'rxjs/internal/operators/catchError';
 
 import { Cartoes } from '../model/cartoes';
+import { EditarDialogComponent } from './../../shared/components/editar-dialog/editar-dialog.component';
 import { ErrorDialogComponent } from './../../shared/components/error-dialog/error-dialog.component';
+import { ExcluirDialogComponent } from './../../shared/components/excluir-dialog/excluir-dialog.component';
 import { CartoesService } from './../services/cartoes.service';
-import { CadastrarCartaoDialogComponent } from 'src/app/shared/components/cadastrar-cartao-dialog/cadastrar-cartao-dialog.component';
 
 @Component({
   selector: 'app-cartoes',
@@ -18,7 +17,16 @@ import { CadastrarCartaoDialogComponent } from 'src/app/shared/components/cadast
   styleUrls: ['./cartoes.component.scss'],
 })
 export class CartoesComponent {
+
   cartoes$: Observable<Cartoes[]>;
+
+  // cartoes$: Cartoes = {
+  //   _id: '',
+  //   numeroCartao: '',
+  //   nomeCartao: '',
+  //   statusCartao: false,
+  //   tipoCartao: []
+  // }
 
   loading = false;
 
@@ -34,7 +42,8 @@ export class CartoesComponent {
 
   constructor(
     private cartoesService: CartoesService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    public route: ActivatedRoute
   ) {
     this.cartoes$ = this.cartoesService.list().pipe(
       catchError((error) => {
@@ -70,11 +79,7 @@ export class CartoesComponent {
 
   onSolicitarCartao(): void {
     console.log('Sucesso ao chamar o método - onSolicitarCartao()');
-    const dialogRef = this.dialog.open(ErrorDialogComponent);
 
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
-    });
   }
 
 

@@ -1,5 +1,3 @@
-import { CadastrarUsuarioDialogComponent } from './../../shared/components/cadastrar-usuario-dialog/cadastrar-usuario-dialog.component';
-import { CadastrarUsuarioComponent } from './../cadastrar-usuario/cadastrar-usuario.component';
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { catchError, Observable, of } from 'rxjs';

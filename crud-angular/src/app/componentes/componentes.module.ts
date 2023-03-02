@@ -23,8 +23,8 @@ import { MenuComponent } from './menu/menu.component';
     HomeComponent,
     ComponentesFormComponent,
     CadastrarUsuarioComponent,
-    UsuariosComponent,
     CadastrarCartaoComponent,
+    UsuariosComponent,
     MenuComponent,
 
   ],

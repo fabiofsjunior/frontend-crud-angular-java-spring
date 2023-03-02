@@ -1,0 +1,65 @@
+<mat-card>
+  <div>
+    <h1>Cadastrar de um novo cartão</h1>
+    <p>
+      Escolha um tipo de cartão em seguida no botão ao lado em "Cadastrar
+      Cartão".
+    </p>
+  </div>
+
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Nome Completo</mat-label>
+      <input matInput formControlName="nomeCartao" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Email</mat-label>
+      <input
+        type="email"
+        matInput
+        placeholder="Ex. pat@example.com"
+        formControlName="emailCartao"
+      />
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input class="hide" matInput disabled />
+      <mat-label></mat-label>
+      <input
+        maxlength="15"
+        matInput
+        value="{{ numeroCartao }}"
+        formControlName="numeroCartao"
+      />
+    </mat-form-field>
+
+    <mat-form-field class="example-container" appearance="fill">
+      <mat-label>Escolher cartão</mat-label>
+      <mat-select formControlName="tipoCartao">
+        <mat-option value="comum" (click)="gerarNumeroCartao()"
+          >COMUM</mat-option
+        >
+        <mat-option value="estudante" (click)="gerarNumeroCartao()"
+          >ESTUDANTE</mat-option
+        >
+        <mat-option value="trabalhador" (click)="gerarNumeroCartao()"
+          >TRABALHADOR</mat-option
+        >
+      </mat-select>
+      <mat-hint align="end">Selecione uma opção</mat-hint>
+    </mat-form-field>
+  </form>
+
+  <section class="example-container">
+    <div class="example-button-row">
+      <button
+        (click)="onSubmit()"
+        color="primary"
+        routerLink="cartoes"
+        mat-raised-button
+      >
+        Solicitar Cartão
+      </button>
+    </div>
+  </section>
+</mat-card>
