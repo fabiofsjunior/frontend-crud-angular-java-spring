@@ -41,4 +41,17 @@ export class CartoesService {
       first(),
     );
   }
+
+  deletarByid(id: any): void{
+    // console.log("deletando pelo id: " + JSON.stringify(id)
+    // )
+    // this.httpClient.delete<Cartoes>(this.API+`/${id}`).subscribe(
+
+    // );
+
+    this.httpClient.delete(this.API+`/${id.id}`)
+        .subscribe();
+
+
+  }
 }

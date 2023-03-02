@@ -21,6 +21,9 @@ export class CartoesComponent {
 
   cartoes$: Observable<Cartoes[]>;
 
+
+
+
   // cartoes$: Cartoes = {
   //   _id: '',
   //   numeroCartao: '',
@@ -69,13 +72,14 @@ export class CartoesComponent {
       console.log(`Dialog result: ${result}`);
     });
   }
-  onExcluir(): void {
-    console.log('Sucesso ao chamar o método - onExcluir()');
-    const dialogRef = this.dialog.open(ExcluirDialogComponent);
+  onExcluir(id: string): void {
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
+    console.log('Sucesso ao chamar o método - onExcluir()'+ JSON.stringify(id));
+    const dialogRef = this.dialog.open(ExcluirDialogComponent, {data: { id: id}});
+
+    // dialogRef.afterClosed().subscribe(result => {
+    //   console.log(`Dialog result: ${result}`);
+    // });
   }
 
   onSolicitarCartao(): void {
