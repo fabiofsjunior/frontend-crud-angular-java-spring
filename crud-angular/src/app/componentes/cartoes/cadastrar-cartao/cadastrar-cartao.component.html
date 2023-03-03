@@ -8,47 +8,30 @@
   </div>
 
   <form class="example-form" [formGroup]="form">
-    <!-- <mat-form-field class="example-full-width">
+    <mat-form-field class="example-full-width">
       <mat-label>Nome Completo</mat-label>
       <input formControlName="nomeCartao" matInput />
-    </mat-form-field> -->
+    </mat-form-field>
 
-    <!-- <mat-form-field class="example-full-width">
-      <mat-label>Email</mat-label>
+    <mat-form-field class="example-full-width">
+      <mat-label>Id do Usuário</mat-label>
       <input
-        formControlName="emailCartao"
-        type="email"
+        formControlName="fkUsuario"
+        type="number"
         matInput
-        placeholder="Ex. pat@example.com"
+        maxlength="3" size="3"
       />
-    </mat-form-field> -->
-    <!-- <mat-form-field class="example-full-width">
-      <mat-label></mat-label>
-      <input
-        formControlName="numeroCartao"
-        maxlength="15"
-        matInput
-        value="{{ numeroCartao }}"
-      />
-    </mat-form-field> -->
-
-    <!-- <mat-form-field class="example-container" appearance="fill">
-      <mat-label>Ativo</mat-label>
-      <input class="hide" matInput formControlName="tipoCartao" value="True">
-    </mat-form-field> -->
+    </mat-form-field>
+    <div>
+      <mat-slide-toggle formControlName="statusCartao">Ativo/Inativo</mat-slide-toggle>
+    </div>
 
     <mat-form-field class="example-container" appearance="fill">
       <mat-label>Escolher cartão</mat-label>
       <mat-select formControlName="tipoCartao">
-        <mat-option value="comum"
-          >COMUM</mat-option
-        >
-        <mat-option value="estudante"
-          >ESTUDANTE</mat-option
-        >
-        <mat-option value="trabalhador"
-          >TRABALHADOR</mat-option
-        >
+        <mat-option value="comum">COMUM</mat-option>
+        <mat-option value="estudante">ESTUDANTE</mat-option>
+        <mat-option value="trabalhador">TRABALHADOR</mat-option>
       </mat-select>
       <mat-hint align="end">Selecione uma opção</mat-hint>
     </mat-form-field>

@@ -18,15 +18,15 @@ constructor(
 ) {
   this.form = this.formBuilder.group({
     nomeCartao: [null],
-    emailCartao: [null],
-    numeroCartao: [null],
+    statusCartao: true,
     tipoCartao: [null],
+    fkUsuario: [null],
   });
 }
 
 
 onSubmit(): void {
-  console.log(this.service.save(this.form.value));
+  console.log("Submit Post Cartão: "+this.service.save(this.form.value));
   this.service.save(this.form.value).subscribe(
     (result) => this.onSucess(),
     (error) => this.onError()
