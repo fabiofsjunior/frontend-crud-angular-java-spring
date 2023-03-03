@@ -3,7 +3,6 @@ import { MatDialog } from '@angular/material/dialog';
 import { Observable, catchError, of } from 'rxjs';
 import { Cartoes } from 'src/app/componentes/model/cartoes';
 import { CartoesService } from 'src/app/componentes/services/cartoes.service';
-import { EditarDialogComponent } from '../editar-dialog/editar-dialog.component';
 import { ErrorDialogComponent } from '../error-dialog/error-dialog.component';
 import { ExcluirDialogComponent } from '../excluir-dialog/excluir-dialog.component';
 
@@ -46,7 +45,6 @@ export class ExibirCartoesUsuarioComponent {
 
   onExcluir(id: number) {
     console.log('Chamando botão excluir, ExibirCartoes.ts');
-    // this.cartoesService.deletarByid(id);
     const dialogRef = this.dialog.open(ExcluirDialogComponent);
 
     dialogRef.afterClosed().subscribe((result) => {
