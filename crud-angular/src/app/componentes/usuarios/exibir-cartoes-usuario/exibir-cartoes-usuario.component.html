@@ -1,4 +1,17 @@
-<h2 mat-dialog-title>Editar dados do cartão</h2>
+
+<h1 mat-dialog-title>Cartões cadastrados no usuário</h1>
+
+<section>
+  <div class="example-button-row">
+    <button
+      color="primary"
+      mat-stroked-button
+      >
+      Novo Cartão
+    </button>
+  </div>
+</section>
+
 <mat-dialog-content class="mat-typography">
   <div *ngIf="cartoes$ | async as cartoes; else loading" class="content">
     <table mat-table [dataSource]="cartoes$" class="mat-elevation-z8">

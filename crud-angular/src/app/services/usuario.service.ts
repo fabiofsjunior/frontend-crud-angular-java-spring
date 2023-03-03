@@ -1,4 +1,4 @@
-import { Usuarios } from './../model/usuarios';
+import { Usuarios } from '../model/usuarios';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { first, delay, tap } from 'rxjs';

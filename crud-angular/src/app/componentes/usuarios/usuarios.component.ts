@@ -4,20 +4,20 @@ import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { catchError, Observable, of } from 'rxjs';
 import { ErrorDialogComponent } from 'src/app/shared/components/error-dialog/error-dialog.component';
-import { ExcluirCartaoDialogComponent } from 'src/app/shared/components/excluir-cartao-dialog/excluir-cartao-dialog.component';
+import { ExcluirCartaoDialogComponent } from 'src/app/componentes/cartoes/excluir-cartao-dialog/excluir-cartao-dialog.component';
 import {
   ExcluirUsuarioDialogComponent,
-} from 'src/app/shared/components/excluir-usuario-dialog/excluir-usuario-dialog.component';
+} from 'src/app/componentes/usuarios/excluir-usuario-dialog/excluir-usuario-dialog.component';
 
-import { Usuarios } from '../model/usuarios';
+import { Usuarios } from '../../model/usuarios';
 import {
   EditarUsuarioDialogComponent,
-} from './../../shared/components/editar-usuario-dialog/editar-usuario-dialog.component';
+} from './editar-usuario-dialog/editar-usuario-dialog.component';
 import {
   ExibirCartoesUsuarioComponent,
-} from './../../shared/components/exibir-cartoes-usuario/exibir-cartoes-usuario.component';
-import { CadastrarUsuarioComponent } from './../cadastrar-usuario/cadastrar-usuario.component';
-import { UsuarioService } from './../services/usuario.service';
+} from './exibir-cartoes-usuario/exibir-cartoes-usuario.component';
+import { CadastrarUsuarioComponent } from './cadastrar-usuario/cadastrar-usuario.component';
+import { UsuarioService } from '../../services/usuario.service';
 
 @Component({
   selector: 'app-usuarios',

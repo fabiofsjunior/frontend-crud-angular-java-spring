@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { AutenticacaoComponent } from './componentes/autenticacao/autenticacao.component';
+import { AutenticacaoComponent } from './shared/components/autenticacao/autenticacao.component';
 import { CartoesComponent } from './componentes/cartoes/cartoes.component';
-import { HomeComponent } from './componentes/home/home.component';
+import { HomeComponent } from './shared/components/home/home.component';
 import { UsuariosComponent } from './componentes/usuarios/usuarios.component';
 
 const routes: Routes = [

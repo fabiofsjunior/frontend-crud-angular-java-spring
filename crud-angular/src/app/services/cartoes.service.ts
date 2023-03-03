@@ -6,7 +6,7 @@ import { first } from 'rxjs/internal/operators/first';
 import { tap } from 'rxjs/internal/operators/tap';
 import { map } from 'rxjs/operators';
 
-import { Cartoes } from './../model/cartoes';
+import { Cartoes } from '../model/cartoes';
 
 @Injectable({
   providedIn: 'root',

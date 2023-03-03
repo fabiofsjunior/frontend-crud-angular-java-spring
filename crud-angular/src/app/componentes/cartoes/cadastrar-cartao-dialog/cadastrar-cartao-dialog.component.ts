@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { CartoesService } from 'src/app/componentes/services/cartoes.service';
+import { CartoesService } from 'src/app/services/cartoes.service';
 
 @Component({
   selector: 'app-cadastrar-cartao-dialog',

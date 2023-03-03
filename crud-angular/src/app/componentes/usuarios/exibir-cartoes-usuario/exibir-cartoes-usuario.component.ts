@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Observable, catchError, of } from 'rxjs';
-import { Cartoes } from 'src/app/componentes/model/cartoes';
-import { CartoesService } from 'src/app/componentes/services/cartoes.service';
-import { ErrorDialogComponent } from '../error-dialog/error-dialog.component';
-import { ExcluirCartaoDialogComponent } from '../excluir-cartao-dialog/excluir-cartao-dialog.component';
+import { Cartoes } from 'src/app/model/cartoes';
+import { CartoesService } from 'src/app/services/cartoes.service';
+import { ErrorDialogComponent } from '../../../shared/components/error-dialog/error-dialog.component';
+import { ExcluirCartaoDialogComponent } from '../../cartoes/excluir-cartao-dialog/excluir-cartao-dialog.component';
 
 @Component({
   selector: 'app-exibir-cartoes-usuario',

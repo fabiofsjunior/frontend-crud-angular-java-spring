@@ -1,4 +1,4 @@
-import { CadastrarCartaoComponent } from './../cadastrar-cartao/cadastrar-cartao.component';
+import { CadastrarCartaoComponent } from './cadastrar-cartao/cadastrar-cartao.component';
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
@@ -6,11 +6,11 @@ import { Observable } from 'rxjs/internal/Observable';
 import { of } from 'rxjs/internal/observable/of';
 import { catchError } from 'rxjs/internal/operators/catchError';
 
-import { Cartoes } from '../model/cartoes';
-import { EditarCartaoDialogComponent } from '../../shared/components/editar-cartao-dialog/editar-cartao-dialog.component';
+import { Cartoes } from '../../model/cartoes';
+import { EditarCartaoDialogComponent } from './editar-cartao-dialog/editar-cartao-dialog.component';
 import { ErrorDialogComponent } from './../../shared/components/error-dialog/error-dialog.component';
-import { ExcluirCartaoDialogComponent } from '../../shared/components/excluir-cartao-dialog/excluir-cartao-dialog.component';
-import { CartoesService } from './../services/cartoes.service';
+import { ExcluirCartaoDialogComponent } from './excluir-cartao-dialog/excluir-cartao-dialog.component';
+import { CartoesService } from '../../services/cartoes.service';
 
 @Component({
   selector: 'app-cartoes',

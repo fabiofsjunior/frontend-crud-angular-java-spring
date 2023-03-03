@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { CartoesService } from 'src/app/componentes/services/cartoes.service';
+import { CartoesService } from 'src/app/services/cartoes.service';
 
 @Component({
   selector: 'app-excluir-cartao-dialog',
