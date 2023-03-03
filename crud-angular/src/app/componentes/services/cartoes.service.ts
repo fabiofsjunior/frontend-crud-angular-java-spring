@@ -33,18 +33,24 @@ export class CartoesService {
       map((cartoes) => cartoes.filter(c => c._id === _id).length),
       tap((cartoes) => console.log(cartoes))
     );
+    this.refresh()
+
   }
 
   save(record: Cartoes){
     return this.httpClient.post<Cartoes>(this.API, record).pipe(
       first(),
     );
+    this.refresh()
+
   }
 
   deletarByid(id: number): void{
     console.log("deletando pelo id: " + JSON.stringify(id))
     this.httpClient.delete<Cartoes>(this.API+`/${id}`).subscribe();
     this.list()
+    this.refresh()
+
 
 
   }
@@ -52,6 +58,12 @@ export class CartoesService {
   deletarCartaoByid(id: any): void{
     console.log("CartoesService => Sucesso no DELETE Cartão : ")
     this.httpClient.delete<Cartoes>(this.API+`/${id.id}`).subscribe();
+    this.refresh()
 
+
+  }
+
+  refresh(){
+    window.location.reload();
   }
 }

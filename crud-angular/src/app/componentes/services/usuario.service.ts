@@ -23,13 +23,19 @@ export class UsuarioService {
 
   save(record: Usuarios){
     return this.httpClient.post<Usuarios>(this.API, record);
+    this.refresh()
   }
 
   onExcluirUsuarioById(id: any){
     'Sucesso ao chamar o método - onExcluirUsuario() teste' + id
 
     this.httpClient.delete(this.API+`/${id}`).subscribe();
+    this.refresh()
 
 
+  }
+
+  refresh(){
+    window.location.reload();
   }
 }
