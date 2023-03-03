@@ -26,6 +26,11 @@ export class UsuarioService {
     this.refresh()
   }
 
+  altersUsuario(record: Usuarios){
+    return this.httpClient.put<Usuarios>(this.API, record);
+    this.refresh()
+  }
+
   onExcluirUsuarioById(id: any){
     'Sucesso ao chamar o método - onExcluirUsuario() teste' + id
 

@@ -36,6 +36,7 @@
     <button color="warn" mat-raised-button mat-dialog-close>Cancelar</button>
     <button
       [disabled]="!meuFormulario.valid"
+      (click)="altersUsuario()"
       color="primary"
       mat-raised-button
       [mat-dialog-close]="true"
