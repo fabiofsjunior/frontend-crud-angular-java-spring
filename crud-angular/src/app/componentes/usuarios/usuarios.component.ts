@@ -11,6 +11,7 @@ import { ExcluirDialogComponent } from 'src/app/shared/components/excluir-dialog
 import { Usuarios } from '../model/usuarios';
 import { ExibirCartoesUsuarioComponent } from './../../shared/components/exibir-cartoes-usuario/exibir-cartoes-usuario.component';
 import { UsuarioService } from './../services/usuario.service';
+import { ExcluirUsuarioDialogComponent } from 'src/app/shared/components/excluir-usuario-dialog/excluir-usuario-dialog.component';
 
 @Component({
   selector: 'app-usuarios',
@@ -18,7 +19,6 @@ import { UsuarioService } from './../services/usuario.service';
   styleUrls: ['./usuarios.component.scss'],
 })
 export class UsuariosComponent {
-
   usuarios$: Observable<Usuarios[]>;
 
   loading = false;
@@ -40,7 +40,9 @@ export class UsuariosComponent {
   ) {
     this.usuarios$ = this.usuarioService.list().pipe(
       catchError((error) => {
-        this.openDialogError('Erro ao carregar Usuários, perca de comunicação com a Database');
+        this.openDialogError(
+          'Erro ao carregar Usuários, perca de comunicação com a Database'
+        );
 
         return of([]);
       })
@@ -92,8 +94,19 @@ export class UsuariosComponent {
       console.log(`Dialog result: ${result}`);
     });
   }
+  onExcluirUsuario(id: string): void {
 
-  onSolicitarCartao(): void {
-    console.log('Sucesso ao chamar o método - onSolicitarCartao()');
+    const dialogRef = this.dialog.open(ExcluirUsuarioDialogComponent, {
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result == true) {
+        console.log('Chamandoo - onExcluirUsuario() => USUARIOS.COMP.TS ' + id)
+        console.log('Chamandoo - onExcluirUsuario() => USUARIOS.COMP.TS ' + id.toString())
+        console.log('Chamandoo - onExcluirUsuario() => USUARIOS.COMP.TS ' + JSON.stringify(id)
+        )
+        this.usuarioService.onExcluirUsuarioById(id);
+      }
+    });
   }
 }

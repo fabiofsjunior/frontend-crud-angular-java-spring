@@ -25,4 +25,11 @@ export class UsuarioService {
     return this.httpClient.post<Usuarios>(this.API, record);
   }
 
+  onExcluirUsuarioById(id: any){
+    'Sucesso ao chamar o método - onExcluirUsuario() teste' + id
+
+    this.httpClient.delete(this.API+`/${id}`).subscribe();
+
+
+  }
 }

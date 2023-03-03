@@ -7,6 +7,7 @@ import { CadastrarUsuarioDialogComponent } from './components/cadastrar-usuario-
 import { EditarDialogComponent } from './components/editar-dialog/editar-dialog.component';
 import { ErrorDialogComponent } from './components/error-dialog/error-dialog.component';
 import { ExcluirDialogComponent } from './components/excluir-dialog/excluir-dialog.component';
+import { ExcluirUsuarioDialogComponent } from './components/excluir-usuario-dialog/excluir-usuario-dialog.component';
 import { ExibirCartoesUsuarioComponent } from './components/exibir-cartoes-usuario/exibir-cartoes-usuario.component';
 import { CategoryPipe } from './pipes/category.pipe';
 import { CartaoPipe } from './pipes/status/cartao.pipe';
@@ -21,8 +22,9 @@ import { CartaoPipe } from './pipes/status/cartao.pipe';
     ExibirCartoesUsuarioComponent,
     CadastrarCartaoDialogComponent,
     CadastrarUsuarioDialogComponent,
+    ExcluirUsuarioDialogComponent,
   ],
   imports: [CommonModule, AppMaterialModule],
-  exports: [ErrorDialogComponent, CartaoPipe, ExcluirDialogComponent, EditarDialogComponent, CadastrarCartaoDialogComponent, CadastrarUsuarioDialogComponent,]
+  exports: [ErrorDialogComponent, CartaoPipe, ExcluirDialogComponent, EditarDialogComponent, CadastrarCartaoDialogComponent, CadastrarUsuarioDialogComponent,ExcluirUsuarioDialogComponent]
 })
 export class SharedModule {}

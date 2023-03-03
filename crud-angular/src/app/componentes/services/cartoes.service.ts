@@ -52,7 +52,6 @@ export class CartoesService {
   deletarCartaoByid(id: any): void{
     console.log("CartoesService => Sucesso no DELETE Cartão : ")
     this.httpClient.delete<Cartoes>(this.API+`/${id.id}`).subscribe();
-    this.list()
 
   }
 }
