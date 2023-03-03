@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppMaterialModule } from './app-material/app-material.module';
 import { CadastrarCartaoDialogComponent } from '../componentes/cartoes/cadastrar-cartao-dialog/cadastrar-cartao-dialog.component';
-import { CadastrarUsuarioDialogComponent } from '../componentes/usuarios/cadastrar-usuario-dialog/cadastrar-usuario-dialog.component';
+
 import { EditarCartaoDialogComponent } from '../componentes/cartoes/editar-cartao-dialog/editar-cartao-dialog.component';
 
 import { EditarUsuarioDialogComponent } from '../componentes/usuarios/editar-usuario-dialog/editar-usuario-dialog.component';
@@ -23,11 +23,10 @@ import { CartaoPipe } from './pipes/status/cartao.pipe';
     EditarCartaoDialogComponent,
     ExibirCartoesUsuarioComponent,
     CadastrarCartaoDialogComponent,
-    CadastrarUsuarioDialogComponent,
     ExcluirUsuarioDialogComponent,
     EditarUsuarioDialogComponent,
   ],
   imports: [CommonModule, AppMaterialModule],
-  exports: [ErrorDialogComponent, CartaoPipe, ExcluirCartaoDialogComponent, EditarCartaoDialogComponent, CadastrarCartaoDialogComponent, CadastrarUsuarioDialogComponent,ExcluirUsuarioDialogComponent]
+  exports: [ErrorDialogComponent, CartaoPipe, ExcluirCartaoDialogComponent, EditarCartaoDialogComponent, CadastrarCartaoDialogComponent,ExcluirUsuarioDialogComponent]
 })
 export class SharedModule {}
