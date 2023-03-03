@@ -4,7 +4,7 @@ import { Observable, catchError, of } from 'rxjs';
 import { Cartoes } from 'src/app/componentes/model/cartoes';
 import { CartoesService } from 'src/app/componentes/services/cartoes.service';
 import { ErrorDialogComponent } from '../error-dialog/error-dialog.component';
-import { ExcluirDialogComponent } from '../excluir-dialog/excluir-dialog.component';
+import { ExcluirCartaoDialogComponent } from '../excluir-cartao-dialog/excluir-cartao-dialog.component';
 
 @Component({
   selector: 'app-exibir-cartoes-usuario',
@@ -45,7 +45,7 @@ export class ExibirCartoesUsuarioComponent {
 
   onExcluir(id: number) {
     console.log('Chamando botão excluir, ExibirCartoes.ts');
-    const dialogRef = this.dialog.open(ExcluirDialogComponent);
+    const dialogRef = this.dialog.open(ExcluirCartaoDialogComponent);
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`se Confirmar ele deleta o ficheiro: ${result}`);

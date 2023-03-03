@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ExcluirDialogComponent } from './excluir-dialog.component';
+import { ExcluirCartaoDialogComponent } from './excluir-cartao-dialog.component';
 
 describe('ExcluirDialogComponent', () => {
-  let component: ExcluirDialogComponent;
-  let fixture: ComponentFixture<ExcluirDialogComponent>;
+  let component: ExcluirCartaoDialogComponent;
+  let fixture: ComponentFixture<ExcluirCartaoDialogComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ExcluirDialogComponent ]
+      declarations: [ ExcluirCartaoDialogComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ExcluirDialogComponent);
+    fixture = TestBed.createComponent(ExcluirCartaoDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

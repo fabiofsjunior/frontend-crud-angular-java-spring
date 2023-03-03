@@ -3,11 +3,11 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CartoesService } from 'src/app/componentes/services/cartoes.service';
 
 @Component({
-  selector: 'app-excluir-dialog',
-  templateUrl: './excluir-dialog.component.html',
-  styleUrls: ['./excluir-dialog.component.scss'],
+  selector: 'app-excluir-cartao-dialog',
+  templateUrl: './excluir-cartao-dialog.component.html',
+  styleUrls: ['./excluir-cartao-dialog.component.scss'],
 })
-export class ExcluirDialogComponent {
+export class ExcluirCartaoDialogComponent {
   constructor(
     private cartoesService: CartoesService,
     @Inject(MAT_DIALOG_DATA) public dataId: number

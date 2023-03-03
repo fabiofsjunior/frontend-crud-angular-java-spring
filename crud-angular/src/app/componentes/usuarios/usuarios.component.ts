@@ -4,7 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { catchError, Observable, of } from 'rxjs';
 import { ErrorDialogComponent } from 'src/app/shared/components/error-dialog/error-dialog.component';
-import { ExcluirDialogComponent } from 'src/app/shared/components/excluir-dialog/excluir-dialog.component';
+import { ExcluirCartaoDialogComponent } from 'src/app/shared/components/excluir-cartao-dialog/excluir-cartao-dialog.component';
 import {
   ExcluirUsuarioDialogComponent,
 } from 'src/app/shared/components/excluir-usuario-dialog/excluir-usuario-dialog.component';
@@ -92,7 +92,7 @@ export class UsuariosComponent {
   }
   onExcluir(): void {
     console.log('Sucesso ao chamar o método - onExcluir()');
-    const dialogRef = this.dialog.open(ExcluirDialogComponent);
+    const dialogRef = this.dialog.open(ExcluirCartaoDialogComponent);
 
     this.httpClient.delete<Usuarios>;
 

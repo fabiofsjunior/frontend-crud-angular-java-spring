@@ -8,7 +8,7 @@ import { EditarCartaoDialogComponent } from './components/editar-cartao-dialog/e
 
 import { EditarUsuarioDialogComponent } from './components/editar-usuario-dialog/editar-usuario-dialog.component';
 import { ErrorDialogComponent } from './components/error-dialog/error-dialog.component';
-import { ExcluirDialogComponent } from './components/excluir-dialog/excluir-dialog.component';
+import { ExcluirCartaoDialogComponent } from './components/excluir-cartao-dialog/excluir-cartao-dialog.component';
 import { ExcluirUsuarioDialogComponent } from './components/excluir-usuario-dialog/excluir-usuario-dialog.component';
 import { ExibirCartoesUsuarioComponent } from './components/exibir-cartoes-usuario/exibir-cartoes-usuario.component';
 import { CategoryPipe } from './pipes/category.pipe';
@@ -19,7 +19,7 @@ import { CartaoPipe } from './pipes/status/cartao.pipe';
     ErrorDialogComponent,
     CategoryPipe,
     CartaoPipe,
-    ExcluirDialogComponent,
+    ExcluirCartaoDialogComponent,
     EditarCartaoDialogComponent,
     ExibirCartoesUsuarioComponent,
     CadastrarCartaoDialogComponent,
@@ -28,6 +28,6 @@ import { CartaoPipe } from './pipes/status/cartao.pipe';
     EditarUsuarioDialogComponent,
   ],
   imports: [CommonModule, AppMaterialModule],
-  exports: [ErrorDialogComponent, CartaoPipe, ExcluirDialogComponent, EditarCartaoDialogComponent, CadastrarCartaoDialogComponent, CadastrarUsuarioDialogComponent,ExcluirUsuarioDialogComponent]
+  exports: [ErrorDialogComponent, CartaoPipe, ExcluirCartaoDialogComponent, EditarCartaoDialogComponent, CadastrarCartaoDialogComponent, CadastrarUsuarioDialogComponent,ExcluirUsuarioDialogComponent]
 })
 export class SharedModule {}

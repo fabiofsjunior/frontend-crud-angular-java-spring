@@ -9,7 +9,7 @@ import { catchError } from 'rxjs/internal/operators/catchError';
 import { Cartoes } from '../model/cartoes';
 import { EditarCartaoDialogComponent } from '../../shared/components/editar-cartao-dialog/editar-cartao-dialog.component';
 import { ErrorDialogComponent } from './../../shared/components/error-dialog/error-dialog.component';
-import { ExcluirDialogComponent } from './../../shared/components/excluir-dialog/excluir-dialog.component';
+import { ExcluirCartaoDialogComponent } from '../../shared/components/excluir-cartao-dialog/excluir-cartao-dialog.component';
 import { CartoesService } from './../services/cartoes.service';
 
 @Component({
@@ -72,7 +72,7 @@ export class CartoesComponent {
     console.log(
       'Sucesso ao chamar o método - onExcluir()' + JSON.stringify(id)
     );
-    const dialogRef = this.dialog.open(ExcluirDialogComponent, {
+    const dialogRef = this.dialog.open(ExcluirCartaoDialogComponent, {
       data: { id: id },
     });
   }
