@@ -1,17 +1,23 @@
 import { HttpClient } from '@angular/common/http';
-import { ActivatedRoute } from '@angular/router';
-import { CadastrarUsuarioComponent } from './../cadastrar-usuario/cadastrar-usuario.component';
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { ActivatedRoute } from '@angular/router';
 import { catchError, Observable, of } from 'rxjs';
-import { EditarDialogComponent } from 'src/app/shared/components/editar-dialog/editar-dialog.component';
 import { ErrorDialogComponent } from 'src/app/shared/components/error-dialog/error-dialog.component';
 import { ExcluirDialogComponent } from 'src/app/shared/components/excluir-dialog/excluir-dialog.component';
+import {
+  ExcluirUsuarioDialogComponent,
+} from 'src/app/shared/components/excluir-usuario-dialog/excluir-usuario-dialog.component';
 
 import { Usuarios } from '../model/usuarios';
-import { ExibirCartoesUsuarioComponent } from './../../shared/components/exibir-cartoes-usuario/exibir-cartoes-usuario.component';
+import {
+  EditarUsuarioDialogComponent,
+} from './../../shared/components/editar-usuario-dialog/editar-usuario-dialog.component';
+import {
+  ExibirCartoesUsuarioComponent,
+} from './../../shared/components/exibir-cartoes-usuario/exibir-cartoes-usuario.component';
+import { CadastrarUsuarioComponent } from './../cadastrar-usuario/cadastrar-usuario.component';
 import { UsuarioService } from './../services/usuario.service';
-import { ExcluirUsuarioDialogComponent } from 'src/app/shared/components/excluir-usuario-dialog/excluir-usuario-dialog.component';
 
 @Component({
   selector: 'app-usuarios',
@@ -78,7 +84,7 @@ export class UsuariosComponent {
 
   onEditar(): void {
     console.log('Sucesso ao chamar o método - onEditar()');
-    const dialogRef = this.dialog.open(EditarDialogComponent);
+    const dialogRef = this.dialog.open(EditarUsuarioDialogComponent);
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);

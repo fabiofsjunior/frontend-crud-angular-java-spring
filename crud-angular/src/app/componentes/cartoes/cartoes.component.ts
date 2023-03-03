@@ -7,7 +7,7 @@ import { of } from 'rxjs/internal/observable/of';
 import { catchError } from 'rxjs/internal/operators/catchError';
 
 import { Cartoes } from '../model/cartoes';
-import { EditarDialogComponent } from './../../shared/components/editar-dialog/editar-dialog.component';
+import { EditarCartaoDialogComponent } from '../../shared/components/editar-cartao-dialog/editar-cartao-dialog.component';
 import { ErrorDialogComponent } from './../../shared/components/error-dialog/error-dialog.component';
 import { ExcluirDialogComponent } from './../../shared/components/excluir-dialog/excluir-dialog.component';
 import { CartoesService } from './../services/cartoes.service';
@@ -18,11 +18,7 @@ import { CartoesService } from './../services/cartoes.service';
   styleUrls: ['./cartoes.component.scss'],
 })
 export class CartoesComponent {
-
   cartoes$: Observable<Cartoes[]>;
-
-
-
 
   // cartoes$: Cartoes = {
   //   _id: '',
@@ -66,20 +62,19 @@ export class CartoesComponent {
 
   onEditar(): void {
     console.log('Sucesso ao chamar o método - onEditar()');
-    const dialogRef = this.dialog.open(EditarDialogComponent);
+    const dialogRef = this.dialog.open(EditarCartaoDialogComponent);
 
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
     });
   }
   onExcluir(id: number): void {
-
-    console.log('Sucesso ao chamar o método - onExcluir()'+ JSON.stringify(id));
-    const dialogRef = this.dialog.open(ExcluirDialogComponent, {data: { id: id}});
-
-    // dialogRef.afterClosed().subscribe(result => {
-    //   console.log(`Dialog result: ${result}`);
-    // });
+    console.log(
+      'Sucesso ao chamar o método - onExcluir()' + JSON.stringify(id)
+    );
+    const dialogRef = this.dialog.open(ExcluirDialogComponent, {
+      data: { id: id },
+    });
   }
 
   onSolicitarCartao(): void {
@@ -89,8 +84,5 @@ export class CartoesComponent {
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
     });
-
   }
-
-
 }

@@ -11,22 +11,24 @@ import { CartoesComponent } from './cartoes/cartoes.component';
 import { ComponentesRoutingModule } from './componentes-routing.module';
 import { HomeComponent } from './home/home.component';
 import { MenuComponent } from './menu/menu.component';
-import { SolicitacoesComponent } from './solicitacoes/solicitacoes.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 
 @NgModule({
   declarations: [
     CartoesComponent,
-    SolicitacoesComponent,
     AutenticacaoComponent,
     HomeComponent,
     CadastrarUsuarioComponent,
     CadastrarCartaoComponent,
     UsuariosComponent,
     MenuComponent,
-
   ],
-  imports: [CommonModule, ComponentesRoutingModule, AppMaterialModule, SharedModule,    ReactiveFormsModule,
+  imports: [
+    CommonModule,
+    ComponentesRoutingModule,
+    AppMaterialModule,
+    SharedModule,
+    ReactiveFormsModule,
   ],
 })
 export class ComponentesModule {}
