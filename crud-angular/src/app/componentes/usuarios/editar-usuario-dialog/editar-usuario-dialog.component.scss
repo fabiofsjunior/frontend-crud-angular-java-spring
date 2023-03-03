@@ -1,14 +1,20 @@
-.example-container {
+mat-card {
   display: flex;
-  justify-content: center;
-  align-items: center;
   margin: auto;
-  flex-direction: column;
+  padding: 50px;
+}
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
 }
 
+.example-full-width {
+  width: 100%;
+}
 
+.button-container {
+  display: flex;
 
-div{
-  margin: 10px;
-  padding: 10px;
+  flex-direction: row-reverse;
 }
