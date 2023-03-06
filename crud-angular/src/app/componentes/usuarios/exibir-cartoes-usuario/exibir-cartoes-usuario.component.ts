@@ -1,11 +1,12 @@
 import { CadastrarCartaoDialogComponent } from '../../cartoes/cadastrar-cartao-dialog/cadastrar-cartao-dialog.component';
-import { Component } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { Component, Inject } from '@angular/core';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Observable, catchError, of } from 'rxjs';
 import { Cartoes } from 'src/app/model/cartoes';
 import { CartoesService } from 'src/app/services/cartoes.service';
 import { ErrorDialogComponent } from '../../../shared/components/error-dialog/error-dialog.component';
 import { ExcluirCartaoDialogComponent } from '../../cartoes/excluir-cartao-dialog/excluir-cartao-dialog.component';
+import { Usuarios } from 'src/app/model/usuarios';
 
 @Component({
   selector: 'app-exibir-cartoes-usuario',
@@ -14,6 +15,8 @@ import { ExcluirCartaoDialogComponent } from '../../cartoes/excluir-cartao-dialo
 })
 export class ExibirCartoesUsuarioComponent {
   cartoes$: Observable<Cartoes[]>;
+
+  // cartoesUsuario: Observable<Usuarios>;
 
   loading = false;
 
@@ -27,7 +30,8 @@ export class ExibirCartoesUsuarioComponent {
 
   constructor(
     private cartoesService: CartoesService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    @Inject(MAT_DIALOG_DATA) public dataId: number
   ) {
     this.cartoes$ = this.cartoesService.list().pipe(
       catchError((error) => {
@@ -45,8 +49,13 @@ export class ExibirCartoesUsuarioComponent {
   }
 
   saveCartaoDialog(id: any) {
-    console.log('Chamando botão excluir, ExibirCartoes.ts');
-    const dialogRef = this.dialog.open(CadastrarCartaoDialogComponent);
+    console.log('Chamando botão excluir, ExibirCartoes.ts' + id);
+    // let idDoUsuarioString: string = JSON.stringify(id);
+    // console.log(idDoUsuarioString);
+    const dialogRef = this.dialog.open(CadastrarCartaoDialogComponent, {
+      data: { id: id.id },
+    });
+
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`se Confirmar ele deleta o ficheiro: ${result}`);

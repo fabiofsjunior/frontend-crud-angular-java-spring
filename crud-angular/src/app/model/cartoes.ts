@@ -5,6 +5,7 @@ export interface Cartoes {
   nomeCartao: string;
   statusCartao: boolean;
   tipoCartao: string[];
+  fkUsuario: number;
 
 
 }

@@ -73,9 +73,12 @@ export class UsuariosComponent {
     });
   }
 
-  onVerCartoes() {
-    console.log('Sucesso ao chamar o método - onVerCartoes()');
-    const dialogRef = this.dialog.open(ExibirCartoesUsuarioComponent);
+  onVerCartoes(id: any) {
+    console.log('Sucesso ao chamar o método - onVerCartoes()' + JSON.stringify(id));
+    const dialogRef = this.dialog.open(ExibirCartoesUsuarioComponent, {
+        data: { id: id.idUsuario },
+
+    });
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
