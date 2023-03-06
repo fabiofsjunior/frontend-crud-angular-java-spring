@@ -5,17 +5,11 @@ import { ActivatedRoute } from '@angular/router';
 import { catchError, Observable, of } from 'rxjs';
 import { ErrorDialogComponent } from 'src/app/shared/components/error-dialog/error-dialog.component';
 import { ExcluirCartaoDialogComponent } from 'src/app/componentes/cartoes/excluir-cartao-dialog/excluir-cartao-dialog.component';
-import {
-  ExcluirUsuarioDialogComponent,
-} from 'src/app/componentes/usuarios/excluir-usuario-dialog/excluir-usuario-dialog.component';
+import { ExcluirUsuarioDialogComponent } from 'src/app/componentes/usuarios/excluir-usuario-dialog/excluir-usuario-dialog.component';
 
 import { Usuarios } from '../../model/usuarios';
-import {
-  EditarUsuarioDialogComponent,
-} from './editar-usuario-dialog/editar-usuario-dialog.component';
-import {
-  ExibirCartoesUsuarioComponent,
-} from './exibir-cartoes-usuario/exibir-cartoes-usuario.component';
+import { EditarUsuarioDialogComponent } from './editar-usuario-dialog/editar-usuario-dialog.component';
+import { ExibirCartoesUsuarioComponent } from './exibir-cartoes-usuario/exibir-cartoes-usuario.component';
 import { CadastrarUsuarioComponent } from './cadastrar-usuario/cadastrar-usuario.component';
 import { UsuarioService } from '../../services/usuario.service';
 
@@ -73,11 +67,12 @@ export class UsuariosComponent {
     });
   }
 
-  onVerCartoes(id: any) {
-    console.log('Sucesso ao chamar o método - onVerCartoes()' + JSON.stringify(id));
+  onVerCartoes(usuarioData: any) {
+    console.log(
+      'Chamando o método - onVerCartoes()' + JSON.stringify(usuarioData + 'Sucesso até o AQUI veja no prox dialogo>>')
+    );
     const dialogRef = this.dialog.open(ExibirCartoesUsuarioComponent, {
-        data: { id: id.idUsuario },
-
+      data: { id: usuarioData.idUsuario, nome: usuarioData.nomeUsuario },
     });
 
     dialogRef.afterClosed().subscribe((result) => {
@@ -104,16 +99,18 @@ export class UsuariosComponent {
     });
   }
   onExcluirUsuario(id: string): void {
-
-    const dialogRef = this.dialog.open(ExcluirUsuarioDialogComponent, {
-    });
+    const dialogRef = this.dialog.open(ExcluirUsuarioDialogComponent, {});
 
     dialogRef.afterClosed().subscribe((result) => {
       if (result == true) {
-        console.log('Chamandoo - onExcluirUsuario() => USUARIOS.COMP.TS ' + id)
-        console.log('Chamandoo - onExcluirUsuario() => USUARIOS.COMP.TS ' + id.toString())
-        console.log('Chamandoo - onExcluirUsuario() => USUARIOS.COMP.TS ' + JSON.stringify(id)
-        )
+        console.log('Chamandoo - onExcluirUsuario() => USUARIOS.COMP.TS ' + id);
+        console.log(
+          'Chamandoo - onExcluirUsuario() => USUARIOS.COMP.TS ' + id.toString()
+        );
+        console.log(
+          'Chamandoo - onExcluirUsuario() => USUARIOS.COMP.TS ' +
+            JSON.stringify(id)
+        );
         this.usuarioService.onExcluirUsuarioById(id);
       }
     });

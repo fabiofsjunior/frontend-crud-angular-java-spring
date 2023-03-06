@@ -31,7 +31,7 @@ export class ExibirCartoesUsuarioComponent {
   constructor(
     private cartoesService: CartoesService,
     public dialog: MatDialog,
-    @Inject(MAT_DIALOG_DATA) public dataId: number
+    @Inject(MAT_DIALOG_DATA) public dadosUsuario: any
   ) {
     this.cartoes$ = this.cartoesService.list().pipe(
       catchError((error) => {
@@ -48,19 +48,19 @@ export class ExibirCartoesUsuarioComponent {
     });
   }
 
-  saveCartaoDialog(id: any) {
-    console.log('Chamando botão excluir, ExibirCartoes.ts' + id);
-    // let idDoUsuarioString: string = JSON.stringify(id);
-    // console.log(idDoUsuarioString);
+  saveCartaoDialog(usuarioNomeId: any) {
+    console.log('Chamando botão excluir, ExibirCartoes.ts' + usuarioNomeId);
+    let idDoUsuarioString: string = JSON.stringify(usuarioNomeId);
+    console.log(idDoUsuarioString +"Sucesso até aqui, veja no próximo dialogo!");
     const dialogRef = this.dialog.open(CadastrarCartaoDialogComponent, {
-      data: { id: id.id },
+      data: { id: usuarioNomeId.id, nome: usuarioNomeId.nome },
     });
 
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`se Confirmar ele deleta o ficheiro: ${result}`);
       if (result == true) {
-        this.cartoesService.deletarByid(id);
+        this.cartoesService.deletarByid(usuarioNomeId);
       }
     });
   }
