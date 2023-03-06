@@ -1,12 +1,12 @@
-
 <h1 mat-dialog-title>Cartões cadastrados no usuário</h1>
 
 <section>
   <div class="example-button-row">
     <button
+      (click)="saveCartaoDialog(cartoes$)"
       color="primary"
       mat-stroked-button
-      >
+    >
       Novo Cartão
     </button>
   </div>

@@ -1,3 +1,4 @@
+import { CadastrarCartaoDialogComponent } from '../../cartoes/cadastrar-cartao-dialog/cadastrar-cartao-dialog.component';
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Observable, catchError, of } from 'rxjs';
@@ -40,6 +41,18 @@ export class ExibirCartoesUsuarioComponent {
   openDialogError(errorMsg: string) {
     this.dialog.open(ErrorDialogComponent, {
       data: errorMsg,
+    });
+  }
+
+  saveCartaoDialog(id: any) {
+    console.log('Chamando botão excluir, ExibirCartoes.ts');
+    const dialogRef = this.dialog.open(CadastrarCartaoDialogComponent);
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`se Confirmar ele deleta o ficheiro: ${result}`);
+      if (result == true) {
+        this.cartoesService.deletarByid(id);
+      }
     });
   }
 

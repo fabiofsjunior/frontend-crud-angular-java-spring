@@ -26,7 +26,7 @@ export class CartoesService {
       tap((cartoes) => console.log(cartoes))
     );
   }
-  listarById(_id: string): Observable<number> {
+  listarById(_id: string) {
     return this.httpClient.get<Cartoes[]>(this.API).pipe(
       first(),
       delay(2000),
@@ -44,15 +44,19 @@ export class CartoesService {
     this.refresh()
 
   }
+  saveById(record: Cartoes){
+    return this.httpClient.post<Cartoes>(this.API+`/${record}`, record).pipe(
+      first(),
+    );
+    this.refresh()
+
+  }
 
   deletarByid(id: number): void{
     console.log("deletando pelo id: " + JSON.stringify(id))
     this.httpClient.delete<Cartoes>(this.API+`/${id}`).subscribe();
     this.list()
     this.refresh()
-
-
-
   }
 
   deletarCartaoByid(id: any): void{

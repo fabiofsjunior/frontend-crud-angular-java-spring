@@ -19,26 +19,13 @@ export class CadastrarCartaoDialogComponent {
   ) {
     this.form = this.formBuilder.group({
       nomeCartao: [null],
-      emailCartao: [null],
-      numeroCartao: [null],
+      fkUsuario: [null],
+      statusCartao: true,
       tipoCartao: [null],
     });
   }
 
-  gerarNumeroCartao(): string {
-    const parteAleatoria = Math.floor(Math.random() * 100000000)
-      .toString()
-      .padStart(8, '0');
-
-    // Concatenar a parte aleatória com o prefixo e sufixo do template
-    const numeroGerado = `90.0.${parteAleatoria}-0`;
-
-    // Retornar o número gerado
-    this.numeroCartao = numeroGerado;
-    return this.numeroCartao;
-  }
-
-  onSubmit(): void {
+  onSubmitById(): void {
     console.log(this.service.save(this.form.value));
     this.service.save(this.form.value).subscribe(
       (result) => this.onSucess(),
