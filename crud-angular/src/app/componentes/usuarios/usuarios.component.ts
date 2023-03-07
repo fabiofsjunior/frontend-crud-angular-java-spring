@@ -56,7 +56,6 @@ export class UsuariosComponent {
   }
 
   onCriarUsuario() {
-
     const dialogRef = this.dialog.open(CadastrarUsuarioComponent, {
       autoFocus: false,
       closeOnNavigation: false,
@@ -74,6 +73,10 @@ export class UsuariosComponent {
           usuarioData + 'Sucesso até o AQUI veja no prox dialogo>>'
         )
     );
+    console.log("NOME "+usuarioData.nomeUsuario)
+    console.log("ID "+usuarioData.idUsuario)
+
+    
     const dialogRef = this.dialog.open(ExibirCartoesUsuarioComponent, {
       data: { id: usuarioData.idUsuario, nome: usuarioData.nomeUsuario },
     });
@@ -85,8 +88,12 @@ export class UsuariosComponent {
 
   onEditar(dados: any): void {
     const dialogRef = this.dialog.open(EditarUsuarioDialogComponent, {
-      data: { id: dados.idUsuario, nome: dados.nomeUsuario, email: dados.emailUsuario, senha: dados.senhaUsuario },
-
+      data: {
+        id: dados.idUsuario,
+        nome: dados.nomeUsuario,
+        email: dados.emailUsuario,
+        senha: dados.senhaUsuario,
+      },
     });
 
     dialogRef.afterClosed().subscribe((result) => {

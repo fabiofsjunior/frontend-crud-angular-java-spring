@@ -30,11 +30,10 @@ export class CartoesService {
   }
   ////GET BYID
   listarById(_id: any) {
-    return this.httpClient.get<Cartoes[]>(this.API).pipe(
+    return this.httpClient.get<Cartoes[]>(`${this.API}/${_id}`).pipe(
       first(),
       delay(2000),
-      map((cartoes) => cartoes.filter((c) => c._id === _id).length),
-      tap((cartoes) => console.log(cartoes))
+
     );
     this.refresh();
   }

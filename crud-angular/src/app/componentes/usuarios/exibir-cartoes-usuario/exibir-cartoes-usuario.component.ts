@@ -14,7 +14,7 @@ import { Usuarios } from 'src/app/model/usuarios';
   styleUrls: ['./exibir-cartoes-usuario.component.scss'],
 })
 export class ExibirCartoesUsuarioComponent {
-  cartoes$: Observable<Cartoes[]>;
+  cartoes$: Observable<any>;
 
   // cartoesUsuario: Observable<Usuarios>;
 
@@ -33,13 +33,8 @@ export class ExibirCartoesUsuarioComponent {
     public dialog: MatDialog,
     @Inject(MAT_DIALOG_DATA) public dadosUsuario: any
   ) {
-    this.cartoes$ = this.cartoesService.list().pipe(
-      catchError((error) => {
-        this.openDialogError('Erro ao carregar cartões');
+    this.cartoes$ = this.cartoesService.listarById(dadosUsuario.id)
 
-        return of([]);
-      })
-    );
   }
 
   openDialogError(errorMsg: string) {
