@@ -13,7 +13,7 @@ import { ErrorDialogComponent } from 'src/app/shared/components/error-dialog/err
 export class EditarCartaoDialogComponent {
   form: FormGroup;
   idCartao: number = 0;
-  numero: String = "";
+  numeroCartao: String = "";
   nomeCartao: String = "";
   fkUsuario: String = "";
   statusCartao: String = "";
@@ -28,8 +28,8 @@ export class EditarCartaoDialogComponent {
     @Inject(MAT_DIALOG_DATA) public dadosCartao: any
   ) {
     this.form = this.formBuilder.group({
-      nome: dadosCartao.nome,
-      numero: dadosCartao.numero,
+      nomeCartao: dadosCartao.nomeCartao,
+      numeroCartao: dadosCartao.numeroCartao,
       statusCartao: dadosCartao.statusCartao,
       tipoCartao: dadosCartao.tipoCartao,
       fkUsuario: dadosCartao.fkUsuario,
@@ -40,9 +40,9 @@ export class EditarCartaoDialogComponent {
       ' Id Cartão =' +
         dadosCartao.id +
         ' Numero Cartão =' +
-        dadosCartao.numero +
+        dadosCartao.numeroCartao +
         ' nomeCartao =' +
-        dadosCartao.nome +
+        dadosCartao.nomeCartao +
         ' FkCartao =' +
         dadosCartao.fkUsuario +
         ' Status Cartao =' +

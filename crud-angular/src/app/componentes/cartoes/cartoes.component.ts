@@ -55,8 +55,8 @@ export class CartoesComponent {
     console.log('Cartoes.onEditar() ' + JSON.stringify(dadosCartao));
     const dialogRef = this.dialog.open(EditarCartaoDialogComponent, {
       data: {
-        nome: dadosCartao.nomeCartao,
-        numero: dadosCartao.numeroCartao,
+        nomeCartao: dadosCartao.nomeCartao,
+        numeroCartao: dadosCartao.numeroCartao,
         statusCartao: dadosCartao.statusCartao,
         tipoCartao: dadosCartao.tipoCartao,
         fkUsuario: dadosCartao.fkUsuario,
