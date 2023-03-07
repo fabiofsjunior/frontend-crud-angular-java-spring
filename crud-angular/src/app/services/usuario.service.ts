@@ -24,10 +24,8 @@ export class UsuarioService {
 
   ////POST
   save(record: any) {
-    return this.httpClient.post<Usuarios>(
-      this.API + `/${record.idUsuario}`,
-      record
-    );
+    console.log(record);
+    return this.httpClient.post<Usuarios>(this.API, record);
     this.refresh();
   }
 
