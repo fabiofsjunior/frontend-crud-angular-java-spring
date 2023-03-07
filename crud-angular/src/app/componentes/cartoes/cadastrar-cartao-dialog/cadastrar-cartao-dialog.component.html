@@ -10,20 +10,27 @@
   <form class="example-form" [formGroup]="form">
     <mat-form-field class="example-full-width">
       <mat-label>Nome Completo</mat-label>
+      <input disabled class="hide" matInput value=" " />
       <input formControlName="nomeCartao" matInput />
+      <input disabled class="hide" matInput value=" " />
+
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
       <mat-label>Id do Usuário</mat-label>
+
+      <input disabled class="hide" matInput value=" " />
       <input
         formControlName="fkUsuario"
-        type="number"
         matInput
-        maxlength="3" size="3"
+        placeholder="Id do Usuário"
       />
+      <input disabled class="hide" matInput value=" " />
     </mat-form-field>
     <div>
-      <mat-slide-toggle formControlName="statusCartao">Ativo/Inativo</mat-slide-toggle>
+      <mat-slide-toggle formControlName="statusCartao"
+        >Ativo/Inativo</mat-slide-toggle
+      >
     </div>
 
     <mat-form-field class="example-container" appearance="fill">

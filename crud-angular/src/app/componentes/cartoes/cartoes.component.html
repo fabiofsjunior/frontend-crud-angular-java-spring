@@ -1,22 +1,10 @@
 <app-menu></app-menu>
 
-<h1>Meus Cartões</h1>
+<h1>Cartoes cadastrados</h1>
 <p>
   Aqui você pode verificar o status dos seus cartões, atualizar dados, excluir e
   solicitar um novo caso desejar, basta selecionar ou clicar no botão ao lado.
 </p>
-
-<section>
-  <div class="example-button-row">
-    <button
-      color="primary"
-      mat-stroked-button
-      (click)="onSolicitarCartao()"
-    >
-      Novo Cartão
-    </button>
-  </div>
-</section>
 
 <div *ngIf="cartoes$ | async as cartoes; else loading" class="content">
   <table mat-table [dataSource]="cartoes$" class="mat-elevation-z8">

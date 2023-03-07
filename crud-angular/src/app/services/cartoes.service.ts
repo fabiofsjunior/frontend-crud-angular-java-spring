@@ -26,7 +26,7 @@ export class CartoesService {
       tap((cartoes) => console.log(cartoes))
     );
   }
-  listarById(_id: string) {
+  listarById(_id: any) {
     return this.httpClient.get<Cartoes[]>(this.API).pipe(
       first(),
       delay(2000),
