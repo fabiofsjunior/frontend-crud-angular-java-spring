@@ -52,4 +52,7 @@ export class CadastrarUsuarioComponent {
     return this.snackBar.open("ERROR AO CADASTRAR USUÁRIO", '', {duration: 5000})
 
   }
+  refresh() {
+    window.location.reload();
+  }
 }
