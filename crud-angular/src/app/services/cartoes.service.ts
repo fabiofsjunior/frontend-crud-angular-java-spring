@@ -57,7 +57,7 @@ export class CartoesService {
           (result) => this.onSucess(),
           (error) => this.onError()
         ),
-        console.log("PRINT RECORD ON SERVICE " + JSON.stringify(record) +" ID : " +id)
+        this.refresh()
     )
   }
   ///DELETE
