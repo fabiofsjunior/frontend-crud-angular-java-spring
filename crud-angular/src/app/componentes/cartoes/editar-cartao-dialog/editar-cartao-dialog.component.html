@@ -1,14 +1,15 @@
 <h2 mat-dialog-title>Ativação/Bloqueio</h2>
 <mat-dialog-content class="mat-typography">
   <h3>Aqui você consegue ativar/inativar seu cartão.</h3>
-
+<form [formGroup]="form">
   <div class="example-container">
-    <mat-slide-toggle>Ativar/Inativar</mat-slide-toggle>
+    <mat-slide-toggle formControlName="statusCartao">Ativar/Inativar</mat-slide-toggle>
   </div>
 
   <mat-dialog-actions align="end">
     <button color="warn" mat-raised-button mat-dialog-close>Cancelar</button>
     <button
+      (click)="alterarStatusCartao()"
       color="primary"
       mat-raised-button
       [mat-dialog-close]="true"
@@ -17,4 +18,5 @@
       Confirmar
     </button>
   </mat-dialog-actions>
+</form>
 </mat-dialog-content>

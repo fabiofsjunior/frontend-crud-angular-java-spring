@@ -7,6 +7,7 @@ import { tap } from 'rxjs/internal/operators/tap';
 import { map } from 'rxjs/operators';
 
 import { Cartoes } from '../model/cartoes';
+import { Usuarios } from '../model/usuarios';
 
 @Injectable({
   providedIn: 'root',
@@ -15,10 +16,11 @@ export class CartoesService {
   //path da API
   private readonly arquivoJson = '/assets/cartoes.json';
   private readonly API = 'http://localhost:8080/api/cartao';
+  snackBar: any;
 
   constructor(private httpClient: HttpClient) {}
 
-
+  ////GET
   list() {
     return this.httpClient.get<Cartoes[]>(this.API).pipe(
       first(),
@@ -26,46 +28,66 @@ export class CartoesService {
       tap((cartoes) => console.log(cartoes))
     );
   }
+  ////GET BYID
   listarById(_id: any) {
     return this.httpClient.get<Cartoes[]>(this.API).pipe(
       first(),
       delay(2000),
-      map((cartoes) => cartoes.filter(c => c._id === _id).length),
+      map((cartoes) => cartoes.filter((c) => c._id === _id).length),
       tap((cartoes) => console.log(cartoes))
     );
-    this.refresh()
-
+    this.refresh();
+  }
+  ////POST
+  save(record: Cartoes) {
+    return this.httpClient.post<Cartoes>(this.API, record).pipe(first());
+    this.refresh();
+  }
+  //// POST BYID
+  saveById(record: Cartoes) {
+    return this.httpClient
+      .post<Cartoes>(this.API + `/${record}`, record)
+      .pipe(first());
+    this.refresh();
   }
 
-  save(record: Cartoes){
-    return this.httpClient.post<Cartoes>(this.API, record).pipe(
-      first(),
+  //// PUT
+  alterarStatusCartao(record: Cartoes, id: number) {
+    return (
+      this.httpClient.put<Usuarios>(this.API + `/${id}`, record).subscribe(
+        (result) => this.onSucess(),
+        (error) => this.onError()
+      )
+
     );
-    this.refresh()
-
   }
-  saveById(record: Cartoes){
-    return this.httpClient.post<Cartoes>(this.API+`/${record}`, record).pipe(
-      first(),
-    );
-    this.refresh()
-
+  ///DELETE
+  deletarByid(id: number): void {
+    this.httpClient.delete<Cartoes>(this.API + `/${id}`).subscribe();
+    this.list();
+    this.refresh();
   }
 
-  deletarByid(id: number): void{
-    this.httpClient.delete<Cartoes>(this.API+`/${id}`).subscribe();
-    this.list()
-    this.refresh()
-  }
-
-  deletarCartaoByid(id: any): void{
-    this.httpClient.delete<Cartoes>(this.API+`/${id.id}`).subscribe();
-    this.refresh()
-
-
+  ///DELETE BY ID
+  deletarCartaoByid(id: any): void {
+    this.httpClient.delete<Cartoes>(this.API + `/${id.id}`).subscribe();
+    this.refresh();
   }
 
   refresh(){
     window.location.reload();
+  }
+
+  private onSucess() {
+    return this.snackBar.open('SUCESSO NA SOLICITAÇÃO!', '', {
+      duration: 5000,
+    }),
+    this.refresh()
+  }
+
+  private onError() {
+    return this.snackBar.open('ERROR NA SOLICITAÇÃO!', '', {
+      duration: 5000,
+    });
   }
 }

@@ -41,7 +41,7 @@ export class EditarUsuarioDialogComponent {
   private onSucess() {
     return this.snackBar.open('USUÁRIO CADASTRADO COM SUCESSO!', '', {
       duration: 5000,
-    });
+    }),
     this.refresh();
   }
 

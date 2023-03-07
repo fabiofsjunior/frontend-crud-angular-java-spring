@@ -1,4 +1,3 @@
-import { CadastrarCartaoComponent } from './cadastrar-cartao/cadastrar-cartao.component';
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
@@ -7,10 +6,10 @@ import { of } from 'rxjs/internal/observable/of';
 import { catchError } from 'rxjs/internal/operators/catchError';
 
 import { Cartoes } from '../../model/cartoes';
-import { EditarCartaoDialogComponent } from './editar-cartao-dialog/editar-cartao-dialog.component';
-import { ErrorDialogComponent } from './../../shared/components/error-dialog/error-dialog.component';
-import { ExcluirCartaoDialogComponent } from './excluir-cartao-dialog/excluir-cartao-dialog.component';
 import { CartoesService } from '../../services/cartoes.service';
+import { ErrorDialogComponent } from './../../shared/components/error-dialog/error-dialog.component';
+import { EditarCartaoDialogComponent } from './editar-cartao-dialog/editar-cartao-dialog.component';
+import { ExcluirCartaoDialogComponent } from './excluir-cartao-dialog/excluir-cartao-dialog.component';
 
 @Component({
   selector: 'app-cartoes',
@@ -19,14 +18,6 @@ import { CartoesService } from '../../services/cartoes.service';
 })
 export class CartoesComponent {
   cartoes$: Observable<Cartoes[]>;
-
-  // cartoes$: Cartoes = {
-  //   _id: '',
-  //   numeroCartao: '',
-  //   nomeCartao: '',
-  //   statusCartao: false,
-  //   tipoCartao: []
-  // }
 
   loading = false;
 
@@ -60,22 +51,17 @@ export class CartoesComponent {
     });
   }
 
-  onEditar(): void {
-    const dialogRef = this.dialog.open(EditarCartaoDialogComponent);
+  onEditar(dadosCartao: number): void {
+    console.log("Cartoes.onEditar() "+JSON.stringify(dadosCartao))
+    const dialogRef = this.dialog.open(EditarCartaoDialogComponent, {
+      data: { id: dadosCartao},
+    } );
 
-    dialogRef.afterClosed().subscribe((result) => {
-    });
+    dialogRef.afterClosed().subscribe((result) => {});
   }
   onExcluir(id: number): void {
     const dialogRef = this.dialog.open(ExcluirCartaoDialogComponent, {
       data: { id: id },
-    });
-  }
-
-  onSolicitarCartao(): void {
-    const dialogRef = this.dialog.open(CadastrarCartaoComponent);
-
-    dialogRef.afterClosed().subscribe((result) => {
     });
   }
 }
