@@ -54,12 +54,12 @@ export class CartoesService {
   //// PUT
   alterarStatusCartao(record: Cartoes, id: number) {
     return (
-      this.httpClient.put<Usuarios>(this.API + `/${id}`, record).subscribe(
-        (result) => this.onSucess(),
-        (error) => this.onError()
-      )
-
-    );
+      this.httpClient.put<Cartoes>(this.API + `/${id}`, record).subscribe(
+        //   (result) => this.onSucess(),
+        //   (error) => this.onError()
+        ),
+        console.log("PRINT RECORD ON SERVICE " + JSON.stringify(record) +" ID : " +id)
+    )
   }
   ///DELETE
   deletarByid(id: number): void {
@@ -78,16 +78,16 @@ export class CartoesService {
     window.location.reload();
   }
 
-  private onSucess() {
-    return this.snackBar.open('SUCESSO NA SOLICITAÇÃO!', '', {
-      duration: 5000,
-    }),
-    this.refresh()
-  }
+  // private onSucess() {
+  //   return this.snackBar.open('SUCESSO NA SOLICITAÇÃO!', '', {
+  //     duration: 5000,
+  //   }),
+  //   this.refresh()
+  // }
 
-  private onError() {
-    return this.snackBar.open('ERROR NA SOLICITAÇÃO!', '', {
-      duration: 5000,
-    });
-  }
+  // private onError() {
+  //   return this.snackBar.open('ERROR NA SOLICITAÇÃO!', '', {
+  //     duration: 5000,
+  //   });
+  // }
 }

@@ -51,11 +51,18 @@ export class CartoesComponent {
     });
   }
 
-  onEditar(dadosCartao: number): void {
-    console.log("Cartoes.onEditar() "+JSON.stringify(dadosCartao))
+  onEditar(dadosCartao: Cartoes): void {
+    console.log('Cartoes.onEditar() ' + JSON.stringify(dadosCartao));
     const dialogRef = this.dialog.open(EditarCartaoDialogComponent, {
-      data: { id: dadosCartao},
-    } );
+      data: {
+        nome: dadosCartao.nomeCartao,
+        numero: dadosCartao.numeroCartao,
+        statusCartao: dadosCartao.statusCartao,
+        tipoCartao: dadosCartao.tipoCartao,
+        fkUsuario: dadosCartao.fkUsuario,
+        id: dadosCartao._id,
+      },
+    });
 
     dialogRef.afterClosed().subscribe((result) => {});
   }

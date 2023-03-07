@@ -12,7 +12,13 @@ import { ErrorDialogComponent } from 'src/app/shared/components/error-dialog/err
 })
 export class EditarCartaoDialogComponent {
   form: FormGroup;
-  idCartao: any;
+  idCartao: number = 0;
+  numero: String = "";
+  nomeCartao: String = "";
+  fkUsuario: String = "";
+  statusCartao: String = "";
+  tipoCartao: String = "";
+
 
   constructor(
     private formBuilder: FormBuilder,
@@ -22,16 +28,32 @@ export class EditarCartaoDialogComponent {
     @Inject(MAT_DIALOG_DATA) public dadosCartao: any
   ) {
     this.form = this.formBuilder.group({
-      idCartao: dadosCartao.id,
-      nomeCartao: [null],
-      fkUsuario: [null],
-      statusCartao: true,
-      tipoCartao: [null],
+      nome: dadosCartao.nome,
+      numero: dadosCartao.numero,
+      statusCartao: dadosCartao.statusCartao,
+      tipoCartao: dadosCartao.tipoCartao,
+      fkUsuario: dadosCartao.fkUsuario,
+      id: dadosCartao.id,
     });
+
+    console.log(
+      ' Id Cartão =' +
+        dadosCartao.id +
+        ' Numero Cartão =' +
+        dadosCartao.numero +
+        ' nomeCartao =' +
+        dadosCartao.nome +
+        ' FkCartao =' +
+        dadosCartao.fkUsuario +
+        ' Status Cartao =' +
+        dadosCartao.statusCartao +
+        ' Tipo Cartao =' +
+        dadosCartao.tipoCartao
+    );
   }
   alterarStatusCartao(): void {
     if (this.form.value != null) {
-      this.service.alterarStatusCartao(this.form.value, this.dadosCartao.id );
+      this.service.alterarStatusCartao(this.form.value, this.dadosCartao.id);
     }
   }
 }
