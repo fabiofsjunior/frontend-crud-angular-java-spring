@@ -53,14 +53,12 @@ export class CartoesService {
   }
 
   deletarByid(id: number): void{
-    console.log("deletando pelo id: " + JSON.stringify(id))
     this.httpClient.delete<Cartoes>(this.API+`/${id}`).subscribe();
     this.list()
     this.refresh()
   }
 
   deletarCartaoByid(id: any): void{
-    console.log("CartoesService => Sucesso no DELETE Cartão : ")
     this.httpClient.delete<Cartoes>(this.API+`/${id.id}`).subscribe();
     this.refresh()
 

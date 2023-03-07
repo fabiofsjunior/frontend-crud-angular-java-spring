@@ -9,6 +9,7 @@ import { first, delay, tap } from 'rxjs';
 export class UsuarioService {
   private readonly arquivoJson = '/assets/cartoes.json';
   private readonly API = 'http://localhost:8080/api/usuario';
+  snackBar: any;
 
 
   constructor(private httpClient: HttpClient) {}
@@ -21,19 +22,20 @@ export class UsuarioService {
     );
   }
 
-  save(record: Usuarios){
-    return this.httpClient.post<Usuarios>(this.API, record);
+  save(record: any){
+    return this.httpClient.post<Usuarios>(this.API+`/${record.idUsuario}`, record);
     this.refresh()
   }
 
-  altersUsuario(record: Usuarios){
-    return this.httpClient.put<Usuarios>(this.API, record);
-    this.refresh()
+  alteraUsuario(record: Usuarios, id: number ){
+    return this.httpClient.put<Usuarios>(this.API+`/${id}`, record).subscribe(
+      (result) => this.onSucess(),
+      (error) => this.onError()
+    ),
+    this.refresh();
   }
 
   onExcluirUsuarioById(id: any){
-    'Sucesso ao chamar o método - onExcluirUsuario() teste' + id
-
     this.httpClient.delete(this.API+`/${id}`).subscribe();
     this.refresh()
 
@@ -42,5 +44,17 @@ export class UsuarioService {
 
   refresh(){
     window.location.reload();
+  }
+
+  private onSucess() {
+    return this.snackBar.open('SUCESSO NA SOLICITAÇÃO!', '', {
+      duration: 5000,
+    });
+  }
+
+  private onError() {
+    return this.snackBar.open('ERROR NA SOLICITAÇÃO!', '', {
+      duration: 5000,
+    });
   }
 }

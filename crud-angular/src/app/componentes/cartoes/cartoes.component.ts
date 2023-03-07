@@ -61,28 +61,21 @@ export class CartoesComponent {
   }
 
   onEditar(): void {
-    console.log('Sucesso ao chamar o método - onEditar()');
     const dialogRef = this.dialog.open(EditarCartaoDialogComponent);
 
     dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
     });
   }
   onExcluir(id: number): void {
-    console.log(
-      'Sucesso ao chamar o método - onExcluir()' + JSON.stringify(id)
-    );
     const dialogRef = this.dialog.open(ExcluirCartaoDialogComponent, {
       data: { id: id },
     });
   }
 
   onSolicitarCartao(): void {
-    console.log('Sucesso ao chamar o método - onSolicitarCartao()');
     const dialogRef = this.dialog.open(CadastrarCartaoComponent);
 
     dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
     });
   }
 }

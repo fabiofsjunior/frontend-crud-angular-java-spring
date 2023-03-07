@@ -34,7 +34,6 @@ export class CadastrarUsuarioComponent {
   }
 
   onSubmit(): void{
-    console.log(this.service.save(this.form.value))
     if (this.form.value != null){
       this.service.save(this.form.value)
       .subscribe(result => this.onSucess(), error => this.onError())

@@ -28,7 +28,6 @@ export class CadastrarUsuarioDialogComponent {
   }
 
   onSubmit(): void{
-    console.log(this.service.save(this.form.value))
     this.service.save(this.form.value)
     .subscribe(result => this.onSucess(), error => this.onError())
 

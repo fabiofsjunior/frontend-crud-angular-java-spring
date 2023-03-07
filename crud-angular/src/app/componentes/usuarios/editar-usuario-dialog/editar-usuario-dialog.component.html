@@ -8,7 +8,7 @@
       <div>
         <mat-form-field class="example-full-width">
           <mat-label>Nome Completo</mat-label>
-          <input matInput required />
+          <input matInput required formControlName="nomeUsuario" />
         </mat-form-field>
       </div>
       <div>
@@ -16,6 +16,7 @@
           <mat-label>Email</mat-label>
           <input
             type="email"
+            formControlName="emailUsuario"
             matInput
             placeholder="Ex. pat@example.com"
             required
@@ -25,7 +26,12 @@
       <div>
         <mat-form-field class="example-full-width">
           <mat-label>Senha</mat-label>
-          <input type="password" matInput required />
+          <input
+            type="password"
+            matInput
+            required
+            formControlName="senhaUsuario"
+          />
         </mat-form-field>
       </div>
     </form>
@@ -35,7 +41,7 @@
     <button color="warn" mat-raised-button mat-dialog-close>Cancelar</button>
     <button
       [disabled]="!meuFormulario.valid"
-      (click)="altersUsuario()"
+      (click)="alteraUsuario()"
       color="primary"
       mat-raised-button
       [mat-dialog-close]="true"

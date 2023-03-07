@@ -40,9 +40,6 @@ export class ExibirCartoesUsuarioComponent {
         return of([]);
       })
     );
-
-
-
   }
 
   openDialogError(errorMsg: string) {
@@ -52,16 +49,12 @@ export class ExibirCartoesUsuarioComponent {
   }
 
   saveCartaoDialog(usuarioNomeId: any) {
-    console.log('Chamando botão excluir, ExibirCartoes.ts' + usuarioNomeId);
-    let idDoUsuarioString: string = JSON.stringify(usuarioNomeId);
-    console.log(idDoUsuarioString +"Sucesso até aqui, veja no próximo dialogo!");
     const dialogRef = this.dialog.open(CadastrarCartaoDialogComponent, {
       data: { id: usuarioNomeId.id, nome: usuarioNomeId.nome },
     });
 
-
     dialogRef.afterClosed().subscribe((result) => {
-      console.log(`se Confirmar ele deleta o ficheiro: ${result}`);
+      console.log(`${result}`);
       if (result == true) {
         this.cartoesService.deletarByid(usuarioNomeId);
       }
@@ -69,11 +62,10 @@ export class ExibirCartoesUsuarioComponent {
   }
 
   onExcluir(id: number) {
-    console.log('Chamando botão excluir, ExibirCartoes.ts');
     const dialogRef = this.dialog.open(ExcluirCartaoDialogComponent);
 
     dialogRef.afterClosed().subscribe((result) => {
-      console.log(`se Confirmar ele deleta o ficheiro: ${result}`);
+      console.log(`${result}`);
       if (result == true) {
         this.cartoesService.deletarByid(id);
       }

@@ -3,15 +3,15 @@ import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { catchError, Observable, of } from 'rxjs';
-import { ErrorDialogComponent } from 'src/app/shared/components/error-dialog/error-dialog.component';
 import { ExcluirCartaoDialogComponent } from 'src/app/componentes/cartoes/excluir-cartao-dialog/excluir-cartao-dialog.component';
 import { ExcluirUsuarioDialogComponent } from 'src/app/componentes/usuarios/excluir-usuario-dialog/excluir-usuario-dialog.component';
+import { ErrorDialogComponent } from 'src/app/shared/components/error-dialog/error-dialog.component';
 
 import { Usuarios } from '../../model/usuarios';
+import { UsuarioService } from '../../services/usuario.service';
+import { CadastrarUsuarioComponent } from './cadastrar-usuario/cadastrar-usuario.component';
 import { EditarUsuarioDialogComponent } from './editar-usuario-dialog/editar-usuario-dialog.component';
 import { ExibirCartoesUsuarioComponent } from './exibir-cartoes-usuario/exibir-cartoes-usuario.component';
-import { CadastrarUsuarioComponent } from './cadastrar-usuario/cadastrar-usuario.component';
-import { UsuarioService } from '../../services/usuario.service';
 
 @Component({
   selector: 'app-usuarios',
@@ -36,7 +36,7 @@ export class UsuariosComponent {
     public route: ActivatedRoute,
     private usuarioService: UsuarioService,
     public dialog: MatDialog,
-    public httpClient: HttpClient
+    private httpClient: HttpClient
   ) {
     this.usuarios$ = this.usuarioService.list().pipe(
       catchError((error) => {
@@ -56,7 +56,7 @@ export class UsuariosComponent {
   }
 
   onCriarUsuario() {
-    console.log('Sucesso ao chamar o método - onCriarUsuario()');
+
     const dialogRef = this.dialog.open(CadastrarUsuarioComponent, {
       autoFocus: false,
       closeOnNavigation: false,
@@ -69,7 +69,10 @@ export class UsuariosComponent {
 
   onVerCartoes(usuarioData: any) {
     console.log(
-      'Chamando o método - onVerCartoes()' + JSON.stringify(usuarioData + 'Sucesso até o AQUI veja no prox dialogo>>')
+      'Chamando o método - onVerCartoes()' +
+        JSON.stringify(
+          usuarioData + 'Sucesso até o AQUI veja no prox dialogo>>'
+        )
     );
     const dialogRef = this.dialog.open(ExibirCartoesUsuarioComponent, {
       data: { id: usuarioData.idUsuario, nome: usuarioData.nomeUsuario },
@@ -80,16 +83,17 @@ export class UsuariosComponent {
     });
   }
 
-  onEditar(): void {
-    console.log('Sucesso ao chamar o método - onEditar()');
-    const dialogRef = this.dialog.open(EditarUsuarioDialogComponent);
+  onEditar(dados: any): void {
+    const dialogRef = this.dialog.open(EditarUsuarioDialogComponent, {
+      data: { id: dados.idUsuario, nome: dados.nomeUsuario, email: dados.emailUsuario, senha: dados.senhaUsuario },
+
+    });
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
     });
   }
   onExcluir(): void {
-    console.log('Sucesso ao chamar o método - onExcluir()');
     const dialogRef = this.dialog.open(ExcluirCartaoDialogComponent);
 
     this.httpClient.delete<Usuarios>;
@@ -103,14 +107,6 @@ export class UsuariosComponent {
 
     dialogRef.afterClosed().subscribe((result) => {
       if (result == true) {
-        console.log('Chamandoo - onExcluirUsuario() => USUARIOS.COMP.TS ' + id);
-        console.log(
-          'Chamandoo - onExcluirUsuario() => USUARIOS.COMP.TS ' + id.toString()
-        );
-        console.log(
-          'Chamandoo - onExcluirUsuario() => USUARIOS.COMP.TS ' +
-            JSON.stringify(id)
-        );
         this.usuarioService.onExcluirUsuarioById(id);
       }
     });

@@ -15,7 +15,7 @@ export class ExcluirCartaoDialogComponent {
 
   deletarByid(id: number): void {
     this.cartoesService.deletarCartaoByid(id);
-    console.log(id);
+
   }
 
 }

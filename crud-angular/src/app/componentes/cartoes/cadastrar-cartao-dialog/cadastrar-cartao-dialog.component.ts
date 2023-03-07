@@ -15,7 +15,6 @@ export class CadastrarCartaoDialogComponent {
   nomeCartao: string = '';
   form: FormGroup;
 
-
   constructor(
     private formBuilder: FormBuilder,
     private snackBar: MatSnackBar,
@@ -32,21 +31,16 @@ export class CadastrarCartaoDialogComponent {
   }
 
   onSubmitById(): void {
-    console.log(JSON.stringify(this.dadosUsuario.nome) + ' Após pressionar SUBMIT')
-    console.log(JSON.stringify(this.dadosUsuario.id) + ' Após pressionar SUBMIT')
-    // console.log(this.form.value);
-    // console.log(this.service.save(this.form.value));
     this.service.save(this.form.value).subscribe(
       (result) => this.onSucess(),
-      (error) => this.onError(),
+      (error) => this.onError()
     );
-    this.onCloseClick()
-
+    this.onCloseClick();
   }
   private onSucess() {
     return this.snackBar.open('CARTÃO CADASTRADO COM SUCESSO!', '', {
       duration: 5000,
-    })
+    });
     this.refresh();
   }
 
@@ -56,7 +50,7 @@ export class CadastrarCartaoDialogComponent {
     });
   }
 
-  refresh(){
+  refresh() {
     window.location.reload();
   }
   onCloseClick(): void {

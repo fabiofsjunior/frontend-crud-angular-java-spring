@@ -26,20 +26,19 @@ export class CadastrarCartaoComponent {
   }
 
   onSubmit(): void {
-    console.log('Submit Post Cartão: ' + this.service.save(this.form.value));
     this.service.save(this.form.value).subscribe(
       (result) => this.onSucess(),
       (error) => this.onError()
     );
   }
   private onSucess() {
-    return this.snackBar.open('CARTÃO CADASTRADO COM SUCESSO!', '', {
+    return this.snackBar.open('SUCESSO NA SOLICITAÇÃO!', '', {
       duration: 5000,
     });
   }
 
   private onError() {
-    return this.snackBar.open('ERROR AO CADASTRAR CARTÃO', '', {
+    return this.snackBar.open('ERROR NA SOLICITAÇÃO!', '', {
       duration: 5000,
     });
   }
