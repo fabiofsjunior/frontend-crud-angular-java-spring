@@ -1,0 +1,53 @@
+<h2 mat-dialog-title>Editar dados do Usuário</h2>
+<mat-dialog-content class="mat-typography">
+  <h3>Aqui você consegue alterar os dados do seu cartão.</h3>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+  <div class="example-container">
+    <form id="stripe-login" [formGroup]="form" #meuFormulario="ngForm">
+      <div>
+        <mat-form-field class="example-full-width">
+          <mat-label>Nome Completo</mat-label>
+          <input matInput required formControlName="nomeUsuario" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="example-full-width">
+          <mat-label>Email</mat-label>
+          <input
+            type="email"
+            formControlName="emailUsuario"
+            matInput
+            placeholder="Ex. pat@example.com"
+            required
+          />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="example-full-width">
+          <mat-label>Senha</mat-label>
+          <input
+            type="password"
+            matInput
+            required
+            formControlName="senhaUsuario"
+          />
+        </mat-form-field>
+      </div>
+    </form>
+  </div>
+
+  <mat-dialog-actions align="end">
+    <button color="warn" mat-raised-button mat-dialog-close>Cancelar</button>
+    <button
+      [disabled]="!meuFormulario.valid"
+      (click)="alteraUsuario()"
+      color="primary"
+      mat-raised-button
+      [mat-dialog-close]="true"
+      cdkFocusInitial
+    >
+      Confirmar
+    </button>
+  </mat-dialog-actions>
+</mat-dialog-content>

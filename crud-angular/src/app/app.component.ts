@@ -10,6 +10,16 @@ import {FormControl, Validators} from '@angular/forms';
 })
 export class AppComponent {
   title = 'crud-angular';
+  hidden: boolean = false;
+
+  exibeLink() {
+    this.hidden = !this.hidden;
+  }
+=======
+
+})
+export class AppComponent {
+  title = 'crud-angular';
 hide: any;
 email: any;
 
@@ -25,9 +35,5 @@ export class FormFieldErrorExample {
     return this.email.hasError('email') ? 'Not a valid email' : '';
   }
 
-}
 
-export class FormFieldPrefixSuffixExample {
-  hide = true;
-}
 

@@ -1,22 +1,35 @@
-<p>
-  <mat-toolbar color="primary" class="example-spacer">
-    <span class="example-spacer">CRUD - JAVA, ANGULAR, SPRING</span>
-  </mat-toolbar>
-</p>
+<mat-toolbar color="secondary" class="title">
+  <span>CRUD - ANGULAR, JAVA, SPRING</span>
+  <span class="example-button-row">
+    <button routerLink="autenticacao" mat-button color="primary">Login</button>
+    <button routerLink="" mat-button color="primary">Home</button>
+  </span>
+</mat-toolbar>
 
+<mat-card>
+  <mat-card-content class="example-card">
+    <!-- TODO O CAMPO DO VIEW vai ficar aqui -->
+    <router-outlet></router-outlet>
+  </mat-card-content>
+</mat-card>
 
-<aside>
-  <nav class="app-navigation">
-    <a routerLink="cartoes">Meus Cartões</a>
-    <a routerLink="solicitacoes">Solicitações</a>
-    <a routerLink="recargas">Recargas</a>
-    <a routerLink="/">Sair</a>
-  </nav>
+<!-- FOOOTER -->
 
-</aside>
+<footer class="footer-distributed">
+  <div class="footer-left">
+    <p class="footer-links">
+      <a href="#">Home</a>
 
+      <a href="#">Blog</a>
 
+      <a href="#">Sobre nós</a>
 
+      <a href="#">Faq</a>
 
-<router-outlet></router-outlet>
+      <a href="#">Contato</a>
+    </p>
+
+    <p>© Fábio F S Jr / © Urbana-PE 2023</p>
+  </div>
+</footer>
 

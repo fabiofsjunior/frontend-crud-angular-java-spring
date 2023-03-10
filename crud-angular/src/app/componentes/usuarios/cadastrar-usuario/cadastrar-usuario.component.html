@@ -1,0 +1,48 @@
+<mat-card>
+  <div>
+    <div>
+      <h1>Cadastrar de um novo cartão</h1>
+      <p>
+        Escolha um tipo de cartão em seguida no botão ao lado em "Cadastrar
+        Cartão".
+      </p>
+    </div>
+    <form id="stripe-login" [formGroup]="form" #meuFormulario="ngForm">
+      <mat-form-field class="example-full-width">
+        <mat-label>Nome Completo</mat-label>
+        <input formControlName="nomeUsuario" matInput required />
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Email</mat-label>
+        <input
+          formControlName="emailUsuario"
+          type="email"
+          matInput
+          placeholder="Ex. pat@example.com"
+          required
+        />
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Senha</mat-label>
+        <input formControlName="senhaUsuario" type="password" matInput required />
+      </mat-form-field>
+    </form>
+  </div>
+
+  <div class="button-container">
+    <button
+      [disabled]="!meuFormulario.valid"
+      (click)="onSubmit()"
+      color="primary"
+      routerLink="usuarios"
+      mat-raised-button
+      mat-dialog-close
+      cdkFocusInitial
+      disabled="true"
+    >
+      Cadastrar
+    </button>
+  </div>
+</mat-card>
+
+
