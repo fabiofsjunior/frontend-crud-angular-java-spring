@@ -8,7 +8,7 @@ import { first, delay, tap } from 'rxjs';
 })
 export class UsuarioService {
   private readonly arquivoJson = '/assets/cartoes.json';
-  private readonly API = 'http://localhost:8080/api/usuario';
+  private readonly API = 'http://localhost:8080/usuario';
   snackBar: any;
 
   constructor(private httpClient: HttpClient) {}
