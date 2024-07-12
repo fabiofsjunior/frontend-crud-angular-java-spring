@@ -1,7 +1,3 @@
-import { CartoesComponent } from './cartoes/cartoes/cartoes.component';
-import { RecargasComponent } from './recargas/recargas/recargas.component';
-import { SolicitacoesComponent } from './solicitacoes/solicitacoes/solicitacoes.component';
-import { LoginComponent } from './login/login/login.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -37,7 +33,6 @@ const routes: Routes = [
         (m) => m.ComponentesModule
       ),
   },
-
 ];
 
 @NgModule({
