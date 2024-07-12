@@ -10,12 +10,12 @@
     <form id="stripe-login" [formGroup]="form" #meuFormulario="ngForm">
       <mat-form-field class="example-full-width">
         <mat-label>Nome Completo</mat-label>
-        <input formControlName="nomeUsuario" matInput required />
+        <input formControlName="nome" matInput required />
       </mat-form-field>
       <mat-form-field class="example-full-width">
         <mat-label>Email</mat-label>
         <input
-          formControlName="emailUsuario"
+          formControlName="email"
           type="email"
           matInput
           placeholder="Ex. pat@example.com"
@@ -24,7 +24,7 @@
       </mat-form-field>
       <mat-form-field class="example-full-width">
         <mat-label>Senha</mat-label>
-        <input formControlName="senhaUsuario" type="password" matInput required />
+        <input formControlName="senha" type="password" matInput required />
       </mat-form-field>
     </form>
   </div>

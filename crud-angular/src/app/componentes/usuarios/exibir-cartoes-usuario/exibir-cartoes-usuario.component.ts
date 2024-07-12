@@ -21,9 +21,9 @@ export class ExibirCartoesUsuarioComponent {
   loading = false;
 
   displayedColumns: string[] = [
-    'numeroCartao',
-    'nomeCartao',
-    'statusCartao',
+    'numero',
+    'nome',
+    'status',
     'tipoCartao',
     'excluir',
   ];

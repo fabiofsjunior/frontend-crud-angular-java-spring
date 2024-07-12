@@ -30,7 +30,7 @@ export class CartoesService {
   }
   ////GET BYID
   listarById(_id: any) {
-    return this.httpClient.get<Cartoes[]>(`${this.API}/${_id}`).pipe(
+    return this.httpClient.get<Cartoes[]>(`${this.API}/${_id}/cartao`).pipe(
       first(),
       delay(2000),
 

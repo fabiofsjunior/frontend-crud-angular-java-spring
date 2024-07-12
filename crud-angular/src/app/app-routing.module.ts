@@ -8,9 +8,9 @@ import { UsuariosComponent } from './componentes/usuarios/usuarios.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
-  { path: 'cartoes', pathMatch: 'full', component: CartoesComponent },
-  { path: 'usuarios', pathMatch: 'full', component: UsuariosComponent },
-  { path: 'autenticacao', pathMatch: 'full', component: AutenticacaoComponent },
+  { path: 'cartoes', component: CartoesComponent },
+  { path: 'usuarios', component: UsuariosComponent },
+  { path: 'autenticacao', component: AutenticacaoComponent },
 
   {
     path: 'autenticacao',

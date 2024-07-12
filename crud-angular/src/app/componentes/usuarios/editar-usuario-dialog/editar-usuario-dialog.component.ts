@@ -11,9 +11,9 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 })
 export class EditarUsuarioDialogComponent {
   formularioValido = false;
-  nomeUsuario: String = '';
-  emailUsuario: String = '';
-  senhaUsuario: String = '';
+  nome: String = '';
+  email: String = '';
+  senha: String = '';
   form: FormGroup;
 
   constructor(
@@ -23,10 +23,10 @@ export class EditarUsuarioDialogComponent {
     @Inject(MAT_DIALOG_DATA) public dadosUsuario: any
   ) {
     this.form = this.formBuilder.group({
-      idUsuario: dadosUsuario.id,
-      nomeUsuario: dadosUsuario.nome,
-      emailUsuario: dadosUsuario.email,
-      senhaUsuario: dadosUsuario.senha,
+      id: dadosUsuario.id,
+      nome: dadosUsuario.nome,
+      email: dadosUsuario.email,
+      senha: dadosUsuario.senha,
     });
   }
   validarFormulario() {
