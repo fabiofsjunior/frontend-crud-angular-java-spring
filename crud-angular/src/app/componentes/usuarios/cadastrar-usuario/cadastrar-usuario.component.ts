@@ -21,9 +21,9 @@ export class CadastrarUsuarioComponent {
     private service: UsuarioService,){
     this.form = this.formBuilder.group( {
 
-      nomeUsuario: [null],
-      emailUsuario: [null],
-      senhaUsuario: [null],
+      nome: [null],
+      email: [null],
+      senha: [null],
 
     });
 

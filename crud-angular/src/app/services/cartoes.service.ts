@@ -15,7 +15,7 @@ import { Usuarios } from '../model/usuarios';
 export class CartoesService {
   //path da API
   private readonly arquivoJson = '/assets/cartoes.json';
-  private readonly API = 'http://localhost:8080/api/cartao';
+  private readonly API = 'http://localhost:8080/cartao';
   snackBar: any;
 
   constructor(private httpClient: HttpClient) {}

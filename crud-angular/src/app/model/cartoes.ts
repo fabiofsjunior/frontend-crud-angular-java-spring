@@ -1,9 +1,9 @@
 export interface Cartoes {
 
-  _id: string;
-  numeroCartao: string;
-  nomeCartao: string;
-  statusCartao: boolean;
+  id: string;
+  numero: string;
+  nome: string;
+  status: boolean;
   tipoCartao: string[];
   fkUsuario: number;
 

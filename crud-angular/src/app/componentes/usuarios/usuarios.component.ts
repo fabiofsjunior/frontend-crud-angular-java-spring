@@ -24,10 +24,10 @@ export class UsuariosComponent {
   loading = false;
 
   displayedColumns: string[] = [
-    'idUsuario',
-    'nomeUsuario',
-    'emailUsuario',
-    'cartoesUsuario',
+    'id',
+    'nome',
+    'email',
+    'cartoes',
     'editar',
     'excluir',
   ];
@@ -76,9 +76,9 @@ export class UsuariosComponent {
     console.log("NOME "+usuarioData.nomeUsuario)
     console.log("ID "+usuarioData.idUsuario)
 
-    
+
     const dialogRef = this.dialog.open(ExibirCartoesUsuarioComponent, {
-      data: { id: usuarioData.idUsuario, nome: usuarioData.nomeUsuario },
+      data: { id: usuarioData.id, nome: usuarioData.nomeUsuario },
     });
 
     dialogRef.afterClosed().subscribe((result) => {
@@ -89,10 +89,10 @@ export class UsuariosComponent {
   onEditar(dados: any): void {
     const dialogRef = this.dialog.open(EditarUsuarioDialogComponent, {
       data: {
-        id: dados.idUsuario,
-        nome: dados.nomeUsuario,
-        email: dados.emailUsuario,
-        senha: dados.senhaUsuario,
+        id: dados.id,
+        nome: dados.nome,
+        email: dados.email,
+        senha: dados.senha,
       },
     });
 
