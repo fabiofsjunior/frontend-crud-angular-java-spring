@@ -16,6 +16,7 @@ export class CartoesService {
   //path da API
   private readonly arquivoJson = '/assets/cartoes.json';
   private readonly API = 'http://localhost:8080/cartao';
+  private readonly cadastrarCartao = 'http://localhost:8080/usuario';
   snackBar: any;
 
   constructor(private httpClient: HttpClient) {}
@@ -44,8 +45,12 @@ export class CartoesService {
   }
   //// POST BYID
   saveById(record: Cartoes) {
+    //// Como pego este valor e adiciono ao URL
+    let id: string = String(record.fkUsuario)
+    console.log(record.fkUsuario)
+
     return this.httpClient
-      .post<Cartoes>(this.API + `/${record}`, record)
+      .post<Cartoes>(this.cadastrarCartao + `/${record.fkUsuario}/cartao`, record)
       .pipe(first());
     this.refresh();
   }
