@@ -3,6 +3,7 @@
   padding: 0;
 }
 
+
 span {
   color: #3f51b5;
   font-size: 1em;
@@ -20,6 +21,9 @@ mat-toolbar {
 mat-toolbar,
 mat-card{
   max-width: 100vw;
+}
+mat-card{
+  background-color: #3f51b5;
 }
 
 .example-card {
@@ -68,7 +72,7 @@ section {
 
 ///////////////// FOOTER
 .footer-distributed {
-  background-color: #3f51b5;
+  background-color: #EA880D;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
   box-sizing: border-box;
   width: 100%;
