@@ -31,10 +31,7 @@ export class CadastrarCartaoDialogComponent {
   }
 
   onSubmitById(): void {
-    this.service.saveById(this.form.value).subscribe(
-      (result) => this.onSucess(),
-      (error) => this.onError()
-    );
+    this.service.saveById(this.form.value)
     this.onCloseClick();
   }
   private onSucess() {

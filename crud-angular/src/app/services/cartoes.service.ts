@@ -45,14 +45,14 @@ export class CartoesService {
   }
   //// POST BYID
   saveById(record: Cartoes) {
-    //// Como pego este valor e adiciono ao URL
     let id: string = String(record.fkUsuario)
-    console.log(record.fkUsuario)
-
     return this.httpClient
       .post<Cartoes>(this.cadastrarCartao + `/${record.fkUsuario}/cartao`, record)
-      .pipe(first());
-    this.refresh();
+      .pipe(first()).subscribe((result) => this.onSucess(),
+      (error) => this.onError()
+    );
+ 
+
   }
 
   //// PUT

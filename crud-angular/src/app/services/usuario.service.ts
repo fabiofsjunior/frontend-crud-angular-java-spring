@@ -30,13 +30,8 @@ export class UsuarioService {
 
   ////PUT
   alteraUsuario(record: Usuarios, id: number) {
-    return (
-      this.httpClient.put<Usuarios>(this.API + `/${id}`, record).subscribe(
-        (result) => this.onSucess(),
-        (error) => this.onError()
-      ),
-      this.refresh()
-    );
+    this.refresh();
+    return this.httpClient.put<Usuarios>(`${this.API}/${id}`, record).subscribe();
   }
 
   onExcluirUsuarioById(id: any) {

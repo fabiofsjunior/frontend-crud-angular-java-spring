@@ -22,15 +22,15 @@ const routes: Routes = [
   {
     path: 'usuarios',
     loadChildren: () =>
-      import('./componentes/componentes.module').then(
-        (m) => m.ComponentesModule
+      import('../app/componentes/usuarios/usuarios.component').then(
+        (m) => m.UsuariosComponent
       ),
   },
   {
     path: 'cartoes',
     loadChildren: () =>
-      import('./componentes/componentes.module').then(
-        (m) => m.ComponentesModule
+      import('../app/componentes/cartoes/cartoes.component').then(
+        (m) => m.CartoesComponent
       ),
   },
 ];

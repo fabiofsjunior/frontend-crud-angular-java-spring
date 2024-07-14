@@ -46,8 +46,9 @@ export class ExibirCartoesUsuarioComponent {
   saveCartaoDialog(usuarioNomeId: any) {
     const dialogRef = this.dialog.open(CadastrarCartaoDialogComponent, {
       data: { id: usuarioNomeId.id, nome: usuarioNomeId.nome },
-    });
 
+    });
+  
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`${result}`);
       if (result == true) {
