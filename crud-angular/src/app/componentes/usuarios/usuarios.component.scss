@@ -1,6 +1,12 @@
 section {
   display: flex;
   justify-content: flex-end;
+  background-color: #fff;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.titulo{
+  color: #fff;
 }
 .example-button-row {
   display: flex;
