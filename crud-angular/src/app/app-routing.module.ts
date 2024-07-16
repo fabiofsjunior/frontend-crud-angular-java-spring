@@ -7,7 +7,7 @@ import { HomeComponent } from './shared/components/home/home.component';
 import { UsuariosComponent } from './componentes/usuarios/usuarios.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', component: HomeComponent },
+  { path: '', pathMatch: 'full', component: AutenticacaoComponent },
   { path: 'cartoes', component: CartoesComponent },
   { path: 'usuarios', component: UsuariosComponent },
   { path: 'autenticacao', component: AutenticacaoComponent },

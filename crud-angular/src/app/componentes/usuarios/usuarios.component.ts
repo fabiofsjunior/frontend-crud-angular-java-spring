@@ -109,13 +109,21 @@ export class UsuariosComponent {
       console.log(`Dialog result: ${result}`);
     });
   }
-  onExcluirUsuario(id: string): void {
-    const dialogRef = this.dialog.open(ExcluirUsuarioDialogComponent, {});
-
+  onExcluirUsuario(data: Usuarios): void {
+    const dialogRef = this.dialog.open(ExcluirUsuarioDialogComponent, {
+      data: {
+       id: data.id,
+      },
+    });
+    console.log(data.id);
     dialogRef.afterClosed().subscribe((result) => {
       if (result == true) {
-        this.usuarioService.onExcluirUsuarioById(id);
+        this.usuarioService.onExcluirUsuarioById(data);
+        console.log(data)
+      }else{
+        console.log(data.id + " else")
       }
     });
+
   }
 }

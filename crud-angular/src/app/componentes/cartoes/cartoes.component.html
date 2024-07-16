@@ -5,6 +5,16 @@
   Aqui você pode verificar o status dos seus cartões, atualizar dados, excluir e
   solicitar um novo caso desejar, basta selecionar ou clicar no botão ao lado.
 </p>
+<section>
+  <div class="example-button-row">
+    <button
+    color="primary"
+    mat-stroked-button
+    >
+    <a href="/usuarios">Usuários</a>
+    </button>
+  </div>
+</section>
 
 <div *ngIf="cartoes$ | async as cartoes; else loading" class="content">
   <table mat-table [dataSource]="cartoes$" class="mat-elevation-z8">
@@ -64,7 +74,7 @@
           mat-icon-button
           color="warn"
           aria-label="Edit"
-          (click)="onExcluir(cartoes$._id)"
+          (click)="onExcluir(cartoes$)"
         >
           <mat-icon>delete</mat-icon>
         </button>

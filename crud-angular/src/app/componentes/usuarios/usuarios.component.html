@@ -16,6 +16,12 @@
     >
       Novo Usuário
     </button>
+    <button
+    color="primary"
+    mat-stroked-button
+    >
+    <a href="/cartoes">Cartões</a>
+    </button>
   </div>
 </section>
 
@@ -78,7 +84,7 @@
         mat-icon-button
         color="warn"
         aria-label="Edit"
-        (click)="onExcluirUsuario(usuarios$.id)"
+        (click)="onExcluirUsuario(usuarios$)"
       >
         <mat-icon>delete</mat-icon>
       </button>
@@ -94,3 +100,5 @@
     <mat-spinner> </mat-spinner>
   </div>
 </ng-template>
+
+

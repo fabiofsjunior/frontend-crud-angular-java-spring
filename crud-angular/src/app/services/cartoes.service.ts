@@ -51,14 +51,15 @@ export class CartoesService {
       .pipe(first()).subscribe((result) => this.onSucess(),
       (error) => this.onError()
     );
- 
+
 
   }
 
   //// PUT
   alterarStatusCartao(record: Cartoes, id: number) {
+    console.log(record.status)
     return (
-      this.httpClient.put<Cartoes>(this.API + `/${id}`, record).subscribe(
+      this.httpClient.put<Cartoes>(this.API + `/${id}/${record.status}`, null).subscribe(
           (result) => this.onSucess(),
           (error) => this.onError()
         ),
@@ -74,8 +75,11 @@ export class CartoesService {
 
   ///DELETE BY ID
   deletarCartaoByid(id: any): void {
+    console.log(id)
     this.httpClient.delete<Cartoes>(this.API + `/${id.id}`).subscribe();
-    this.refresh();
+
+    this.refresh()
+
   }
 
   refresh(){

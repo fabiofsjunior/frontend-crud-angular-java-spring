@@ -66,9 +66,10 @@ export class CartoesComponent {
 
     dialogRef.afterClosed().subscribe((result) => {});
   }
-  onExcluir(id: number): void {
+  onExcluir(data: Cartoes) {
     const dialogRef = this.dialog.open(ExcluirCartaoDialogComponent, {
-      data: { id: id },
+      data: { id: data.id },
     });
+
   }
 }
