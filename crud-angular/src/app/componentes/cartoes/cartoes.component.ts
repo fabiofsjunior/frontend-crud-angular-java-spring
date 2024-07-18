@@ -70,6 +70,5 @@ export class CartoesComponent {
     const dialogRef = this.dialog.open(ExcluirCartaoDialogComponent, {
       data: { id: data.id },
     });
-
   }
 }

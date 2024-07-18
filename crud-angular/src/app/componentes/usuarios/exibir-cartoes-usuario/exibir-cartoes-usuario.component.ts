@@ -48,7 +48,7 @@ export class ExibirCartoesUsuarioComponent {
       data: { id: usuarioNomeId.id, nome: usuarioNomeId.nome },
 
     });
-  
+
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`${result}`);
       if (result == true) {
@@ -57,14 +57,9 @@ export class ExibirCartoesUsuarioComponent {
     });
   }
 
-  onExcluir(id: number) {
-    const dialogRef = this.dialog.open(ExcluirCartaoDialogComponent);
-
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(`${result}`);
-      if (result == true) {
-        this.cartoesService.deletarByid(id);
-      }
+  onExcluir(data: Cartoes) {
+    const dialogRef = this.dialog.open(ExcluirCartaoDialogComponent, {
+      data: { id: data.id },
     });
   }
 }
