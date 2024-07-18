@@ -10,6 +10,9 @@ span {
   max-width: 100vw;
   max-height: 90vh;
 }
+img{
+  width: 140px;
+}
 
 
 mat-toolbar {
@@ -21,6 +24,7 @@ mat-toolbar {
 mat-toolbar,
 mat-card{
   max-width: 100vw;
+  padding-top: 10px;
 }
 mat-card{
   background-color: #3f51b5;
