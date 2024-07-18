@@ -16,6 +16,7 @@ export class CartoesService {
   //path da API
   private readonly arquivoJson = '/assets/cartoes.json';
   private readonly API = 'http://localhost:8080/cartao';
+  private readonly cadastrarCartao = 'http://localhost:8080/usuario';
   snackBar: any;
 
   constructor(private httpClient: HttpClient) {}
@@ -30,7 +31,7 @@ export class CartoesService {
   }
   ////GET BYID
   listarById(_id: any) {
-    return this.httpClient.get<Cartoes[]>(`${this.API}/${_id}`).pipe(
+    return this.httpClient.get<Cartoes[]>(`${this.API}/${_id}/cartao`).pipe(
       first(),
       delay(2000),
 
@@ -44,16 +45,20 @@ export class CartoesService {
   }
   //// POST BYID
   saveById(record: Cartoes) {
+    let id: string = String(record.fkUsuario)
     return this.httpClient
-      .post<Cartoes>(this.API + `/${record}`, record)
-      .pipe(first());
-    this.refresh();
+      .post<Cartoes>(this.cadastrarCartao + `/${record.fkUsuario}/cartao`, record)
+      .pipe(first()).subscribe((result) => this.onSucess(),
+      (error) => this.onError()
+    );
+
+
   }
 
   //// PUT
   alterarStatusCartao(record: Cartoes, id: number) {
     return (
-      this.httpClient.put<Cartoes>(this.API + `/${id}`, record).subscribe(
+      this.httpClient.put<Cartoes>(this.API + `/${id}/${record.status}`, null).subscribe(
           (result) => this.onSucess(),
           (error) => this.onError()
         ),
@@ -70,7 +75,7 @@ export class CartoesService {
   ///DELETE BY ID
   deletarCartaoByid(id: any): void {
     this.httpClient.delete<Cartoes>(this.API + `/${id.id}`).subscribe();
-    this.refresh();
+    this.refresh()
   }
 
   refresh(){

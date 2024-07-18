@@ -1,7 +1,3 @@
-import { CartoesComponent } from './cartoes/cartoes/cartoes.component';
-import { RecargasComponent } from './recargas/recargas/recargas.component';
-import { SolicitacoesComponent } from './solicitacoes/solicitacoes/solicitacoes.component';
-import { LoginComponent } from './login/login/login.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -11,10 +7,10 @@ import { HomeComponent } from './shared/components/home/home.component';
 import { UsuariosComponent } from './componentes/usuarios/usuarios.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', component: HomeComponent },
-  { path: 'cartoes', pathMatch: 'full', component: CartoesComponent },
-  { path: 'usuarios', pathMatch: 'full', component: UsuariosComponent },
-  { path: 'autenticacao', pathMatch: 'full', component: AutenticacaoComponent },
+  { path: '', pathMatch: 'full', component: AutenticacaoComponent },
+  { path: 'cartoes', component: CartoesComponent },
+  { path: 'usuarios', component: UsuariosComponent },
+  { path: 'autenticacao', component: AutenticacaoComponent },
 
   {
     path: 'autenticacao',
@@ -26,18 +22,17 @@ const routes: Routes = [
   {
     path: 'usuarios',
     loadChildren: () =>
-      import('./componentes/componentes.module').then(
-        (m) => m.ComponentesModule
+      import('../app/componentes/usuarios/usuarios.component').then(
+        (m) => m.UsuariosComponent
       ),
   },
   {
     path: 'cartoes',
     loadChildren: () =>
-      import('./componentes/componentes.module').then(
-        (m) => m.ComponentesModule
+      import('../app/componentes/cartoes/cartoes.component').then(
+        (m) => m.CartoesComponent
       ),
   },
-
 ];
 
 @NgModule({

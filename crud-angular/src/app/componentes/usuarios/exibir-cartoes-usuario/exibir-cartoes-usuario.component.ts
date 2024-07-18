@@ -21,9 +21,9 @@ export class ExibirCartoesUsuarioComponent {
   loading = false;
 
   displayedColumns: string[] = [
-    'numeroCartao',
-    'nomeCartao',
-    'statusCartao',
+    'numero',
+    'nome',
+    'status',
     'tipoCartao',
     'excluir',
   ];
@@ -46,24 +46,21 @@ export class ExibirCartoesUsuarioComponent {
   saveCartaoDialog(usuarioNomeId: any) {
     const dialogRef = this.dialog.open(CadastrarCartaoDialogComponent, {
       data: { id: usuarioNomeId.id, nome: usuarioNomeId.nome },
+
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      console.log(`${result}`);
+
       if (result == true) {
         this.cartoesService.deletarByid(usuarioNomeId);
       }
+      this.cartoesService.refresh();
     });
   }
 
-  onExcluir(id: number) {
-    const dialogRef = this.dialog.open(ExcluirCartaoDialogComponent);
-
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(`${result}`);
-      if (result == true) {
-        this.cartoesService.deletarByid(id);
-      }
+  onExcluir(data: Cartoes) {
+    const dialogRef = this.dialog.open(ExcluirCartaoDialogComponent, {
+      data: { id: data.id },
     });
   }
 }

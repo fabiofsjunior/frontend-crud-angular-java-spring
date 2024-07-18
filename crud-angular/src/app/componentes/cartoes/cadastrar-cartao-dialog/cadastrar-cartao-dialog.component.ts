@@ -11,8 +11,8 @@ import { ErrorDialogComponent } from 'src/app/shared/components/error-dialog/err
   styleUrls: ['./cadastrar-cartao-dialog.component.scss'],
 })
 export class CadastrarCartaoDialogComponent {
-  numeroCartao: string = '';
-  nomeCartao: string = '';
+  numero: string = '';
+  nome: string = '';
   form: FormGroup;
 
   constructor(
@@ -23,18 +23,15 @@ export class CadastrarCartaoDialogComponent {
     @Inject(MAT_DIALOG_DATA) public dadosUsuario: any
   ) {
     this.form = this.formBuilder.group({
-      nomeCartao: dadosUsuario.nome,
+      nome: dadosUsuario.nome,
       fkUsuario: dadosUsuario.id,
-      statusCartao: true,
+      status: true,
       tipoCartao: [null],
     });
   }
 
   onSubmitById(): void {
-    this.service.save(this.form.value).subscribe(
-      (result) => this.onSucess(),
-      (error) => this.onError()
-    );
+    this.service.saveById(this.form.value)
     this.onCloseClick();
   }
   private onSucess() {

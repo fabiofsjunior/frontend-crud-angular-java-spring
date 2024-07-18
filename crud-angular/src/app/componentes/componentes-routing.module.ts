@@ -11,12 +11,12 @@ const routes: Routes = [
   {
     path: 'usuarios',
     loadChildren: () =>
-      import('./componentes.module').then((m) => m.ComponentesModule),
+      import('./usuarios/usuarios.component').then((m) => m.UsuariosComponent),
   },
   {
     path: 'cartoes',
     loadChildren: () =>
-      import('./componentes.module').then((m) => m.ComponentesModule),
+      import('./cartoes/cartoes.component').then((m) => m.CartoesComponent),
   },
 ];
 

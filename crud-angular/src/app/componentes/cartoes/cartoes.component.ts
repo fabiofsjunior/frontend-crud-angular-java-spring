@@ -22,10 +22,10 @@ export class CartoesComponent {
   loading = false;
 
   displayedColumns: string[] = [
-    '_id',
-    'numeroCartao',
-    'nomeCartao',
-    'statusCartao',
+    'id',
+    'numero',
+    'nome',
+    'status',
     'tipoCartao',
     'editar',
     'excluir',
@@ -52,7 +52,7 @@ export class CartoesComponent {
   }
 
   onEditar(dadosCartao: Cartoes): void {
-    console.log('Cartoes.onEditar() ' + JSON.stringify(dadosCartao));
+
     const dialogRef = this.dialog.open(EditarCartaoDialogComponent, {
       data: {
         nome: dadosCartao.nome,
@@ -66,9 +66,9 @@ export class CartoesComponent {
 
     dialogRef.afterClosed().subscribe((result) => {});
   }
-  onExcluir(id: number): void {
+  onExcluir(data: Cartoes) {
     const dialogRef = this.dialog.open(ExcluirCartaoDialogComponent, {
-      data: { id: id },
+      data: { id: data.id },
     });
   }
 }

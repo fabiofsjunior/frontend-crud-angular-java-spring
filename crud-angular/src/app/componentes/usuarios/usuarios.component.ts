@@ -61,29 +61,15 @@ export class UsuariosComponent {
       closeOnNavigation: false,
     });
 
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
-    });
+    dialogRef.afterClosed().subscribe((result) => {});
   }
 
   onVerCartoes(usuarioData: any) {
-    console.log(
-      'Chamando o método - onVerCartoes()' +
-        JSON.stringify(
-          usuarioData + 'Sucesso até o AQUI veja no prox dialogo>>'
-        )
-    );
-    console.log("NOME "+usuarioData.nomeUsuario)
-    console.log("ID "+usuarioData.idUsuario)
-
-
     const dialogRef = this.dialog.open(ExibirCartoesUsuarioComponent, {
-      data: { id: usuarioData.id, nome: usuarioData.nomeUsuario },
+      data: { id: usuarioData.id, nome: usuarioData.nome },
     });
 
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
-    });
+    dialogRef.afterClosed().subscribe((result) => {});
   }
 
   onEditar(dados: any): void {
@@ -96,26 +82,28 @@ export class UsuariosComponent {
       },
     });
 
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
-    });
+    dialogRef.afterClosed().subscribe((result) => {});
   }
   onExcluir(): void {
     const dialogRef = this.dialog.open(ExcluirCartaoDialogComponent);
 
     this.httpClient.delete<Usuarios>;
 
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
-    });
+    dialogRef.afterClosed().subscribe((result) => {});
   }
-  onExcluirUsuario(id: string): void {
-    const dialogRef = this.dialog.open(ExcluirUsuarioDialogComponent, {});
-
+  onExcluirUsuario(data: Usuarios): void {
+    const dialogRef = this.dialog.open(ExcluirUsuarioDialogComponent, {
+      data: {
+       id: data.id,
+      },
+    });
     dialogRef.afterClosed().subscribe((result) => {
       if (result == true) {
-        this.usuarioService.onExcluirUsuarioById(id);
+        this.usuarioService.onExcluirUsuarioById(data);
+      }else{
+
       }
     });
+
   }
 }
