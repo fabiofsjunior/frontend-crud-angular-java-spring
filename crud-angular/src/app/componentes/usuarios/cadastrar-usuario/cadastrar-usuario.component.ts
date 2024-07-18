@@ -21,7 +21,7 @@ export class CadastrarUsuarioComponent {
       senha: [null],
     });
   }
-  
+
   validarFormulario() {
     this.formularioValido = true; // ou false
   }
@@ -40,7 +40,7 @@ export class CadastrarUsuarioComponent {
   }
 
   private onError(){
-    return this.snackBar.open("ERROR AO CADASTRAR USUÁRIO", '', {duration: 5000})
+    return this.snackBar.open("ERROR AO CADASTRAR USUÁRIO EMAIL INVÁLIDO", '', {duration: 5000})
 
   }
   refresh() {
