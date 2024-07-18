@@ -50,10 +50,11 @@ export class ExibirCartoesUsuarioComponent {
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      console.log(`${result}`);
+
       if (result == true) {
         this.cartoesService.deletarByid(usuarioNomeId);
       }
+      this.cartoesService.refresh();
     });
   }
 

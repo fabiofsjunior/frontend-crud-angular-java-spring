@@ -61,29 +61,15 @@ export class UsuariosComponent {
       closeOnNavigation: false,
     });
 
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
-    });
+    dialogRef.afterClosed().subscribe((result) => {});
   }
 
   onVerCartoes(usuarioData: any) {
-    console.log(
-      'Chamando o método - onVerCartoes()' +
-        JSON.stringify(
-          usuarioData + 'Sucesso até o AQUI veja no prox dialogo>>'
-        )
-    );
-    console.log("NOME "+usuarioData.nome)
-    console.log("ID "+usuarioData.id)
-
-
     const dialogRef = this.dialog.open(ExibirCartoesUsuarioComponent, {
       data: { id: usuarioData.id, nome: usuarioData.nome },
     });
 
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
-    });
+    dialogRef.afterClosed().subscribe((result) => {});
   }
 
   onEditar(dados: any): void {
@@ -96,18 +82,14 @@ export class UsuariosComponent {
       },
     });
 
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
-    });
+    dialogRef.afterClosed().subscribe((result) => {});
   }
   onExcluir(): void {
     const dialogRef = this.dialog.open(ExcluirCartaoDialogComponent);
 
     this.httpClient.delete<Usuarios>;
 
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
-    });
+    dialogRef.afterClosed().subscribe((result) => {});
   }
   onExcluirUsuario(data: Usuarios): void {
     const dialogRef = this.dialog.open(ExcluirUsuarioDialogComponent, {
@@ -115,13 +97,11 @@ export class UsuariosComponent {
        id: data.id,
       },
     });
-    console.log(data.id);
     dialogRef.afterClosed().subscribe((result) => {
       if (result == true) {
         this.usuarioService.onExcluirUsuarioById(data);
-        console.log(data)
       }else{
-        console.log(data.id + " else")
+
       }
     });
 

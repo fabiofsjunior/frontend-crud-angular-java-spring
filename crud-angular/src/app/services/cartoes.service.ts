@@ -57,7 +57,6 @@ export class CartoesService {
 
   //// PUT
   alterarStatusCartao(record: Cartoes, id: number) {
-    console.log(record.status)
     return (
       this.httpClient.put<Cartoes>(this.API + `/${id}/${record.status}`, null).subscribe(
           (result) => this.onSucess(),
@@ -75,11 +74,8 @@ export class CartoesService {
 
   ///DELETE BY ID
   deletarCartaoByid(id: any): void {
-    console.log(id)
     this.httpClient.delete<Cartoes>(this.API + `/${id.id}`).subscribe();
-
     this.refresh()
-
   }
 
   refresh(){

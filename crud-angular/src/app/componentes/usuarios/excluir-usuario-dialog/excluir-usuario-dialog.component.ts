@@ -15,7 +15,6 @@ export class ExcluirUsuarioDialogComponent {
   ) {}
 
   deletarUsuarioByid(id: any): void {
-    console.log(id)
     this.usuarioService.onExcluirUsuarioById(id);
   }
 

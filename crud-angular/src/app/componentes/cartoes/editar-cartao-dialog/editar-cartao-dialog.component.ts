@@ -35,21 +35,6 @@ export class EditarCartaoDialogComponent {
       fkUsuario: dadosCartao.fkUsuario,
       id: dadosCartao.id,
     });
-
-    console.log(
-      ' Id Cartão =' +
-        dadosCartao.id +
-        ' Numero Cartão =' +
-        dadosCartao.numero +
-        ' nomeCartao =' +
-        dadosCartao.nome +
-        ' FkCartao =' +
-        dadosCartao.fkUsuario +
-        ' Status Cartao =' +
-        dadosCartao.status +
-        ' Tipo Cartao =' +
-        dadosCartao.tipoCartao
-    );
   }
   alterarStatusCartao(): void {
     if (this.form.value != null) {

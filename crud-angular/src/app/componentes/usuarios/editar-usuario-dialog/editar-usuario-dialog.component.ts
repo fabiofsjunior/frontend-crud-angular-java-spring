@@ -26,7 +26,6 @@ export class EditarUsuarioDialogComponent {
       id: dadosUsuario.id,
       nome: dadosUsuario.nome,
       email: dadosUsuario.email,
-      senha: dadosUsuario.senha,
     });
   }
   validarFormulario() {
@@ -34,7 +33,6 @@ export class EditarUsuarioDialogComponent {
   }
 
   alteraUsuario(): void {
-    console.log(this.form.value)
     if (this.form.value != null) {
       this.service.alteraUsuario(this.form.value, this.dadosUsuario.id);
     }
