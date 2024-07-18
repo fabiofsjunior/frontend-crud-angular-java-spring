@@ -1,6 +1,8 @@
 
 
 <div >
+  <a id="sair" routerLink="/">Sair</a>
+
   <h1 class="titulo">Cartoes cadastrados</h1>
   <p class="titulo">
     Aqui você pode verificar o status dos seus cartões, atualizar dados, excluir e
@@ -23,14 +25,14 @@
 
     <!-- Nº Column -->
     <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef>Nº</th>
+      <th mat-header-cell *matHeaderCellDef>ID</th>
       <td mat-cell *matCellDef="let element">{{ element.id }}</td>
     </ng-container>
 
     <!-- Nº Column -->
     <ng-container matColumnDef="numero">
-      <th mat-header-cell *matHeaderCellDef>Nº</th>
-      <td mat-cell *matCellDef="let element">{{ element.numero }}</td>
+      <th mat-header-cell *matHeaderCellDef>Numero do Cartão</th>
+      <td mat-cell *matCellDef="let element">{{ element.numeroCartao }}</td>
     </ng-container>
 
     <!-- Nome Column -->
@@ -55,7 +57,7 @@
 
     <!-- Edit Column -->
     <ng-container matColumnDef="editar">
-      <th mat-header-cell *matHeaderCellDef>Editar</th>
+      <th mat-header-cell *matHeaderCellDef>Editar Status</th>
       <td mat-cell *matCellDef="let cartoes$">
         <button
           mat-icon-button
